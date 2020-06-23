@@ -1,0 +1,127 @@
+Rad s blokovima iz kategorija Math i Variables
+==============================================
+
+MakeCode podržava četiri osnovne aritmetičke operacije:
+- zbrajanje ( + ),
+- oduzimanje ( - ),
+- množenje ( * ) i
+- dijeljenje ( / ).
+
+Blokovi koji omogućuju računanje nazivaju se aritmetičkim operatorima. Oni su u kategoriji |Math|.
+
+.. |Math| image:: ../_images/_imageMicroBit/p41.png
+
+Aritmetički operatori vraćaju **BROJ** (rezultat aritmetičke operacije).
+
+.. image:: ../_images/_imageMicroBit/p40.png
+      :align: center
+
+Rezultat (broj) koji je vratio aritmetički operator možete koristiti kao ulaznu vrijednost za blokove koji prihvaćaju brojeve. To se jasno vidi na gornjoj slici. Blok prikazivanja broja ... prihvaća broj kao ulaz i prikazuje ga na zaslonu.
+
+Pred vas stavljamo složeniji aritmetički izraz: ( 2 + 1 ) * ( 12 - 10 ). U MakeCode-u izračunavanje njegovog rezultata može izgledati ovako:
+
+.. image:: ../_images/_imageMicroBit/p42.png
+      :align: center
+
+Analizirajući složeni izraz, zaključujemo da se sastoji od manjih jedinica - međupredmetnih rezultata.
+
+Zbroj brojeva (2 + 1) jedan je posredni rezultat. Razlika u brojevima (12-10) je drugi posredni rezultat. Množenjem zbroja i razlike (zbroj * razlike) dobivamo rezultat cijelog izraza.
+
+U programiranju je prikladno koristiti srednje vrijednosti, koje se nazivaju i **varijable**. Na varijable možete razmišljati kao na prostore u memoriji računala, slično kao u kutijama gdje su pohranjeni posredni rezultati. Varijable imaju svoja imena. 
+
+Kad u programu želite koristiti vrijednost varijable, dovoljno je navesti njeno ime.
+
+U MakeCodeu stvarate varijable u kategoriji |Variables|.
+
+.. |Variables| image:: ../_images/_imageMicroBit/p43.png
+
+Da biste stvorili varijablu, u kategoriji Varijable (1) kliknite gumb Make a variable (2) i u polje unesite naziv varijable (3), u našem slučaju Counter. Klikom na gumb OK (4).
+
+.. image:: ../_images/_imageMicroBit/11.png
+      :align: center
+
+Jasno je da naš (2 + 1) * (12 - 10) izraz možete predstaviti različito. Stvaranjem dvije varijable: |Zbroj| i |Razlika|.
+
+.. |Zbroj| image:: ../_images/_imageMicroBit/p45.png
+
+.. |Razlika| image:: ../_images/_imageMicroBit/p44.png
+
+Postavljamo početnu vrijednost varijable ``Brojač`` na nulu. To se može učiniti povlačenjem bloka |set| iz kategorije |Variables| u blok |onstart|.
+
+.. |onstart| image:: ../_images/_imageMicroBit/s20.png
+
+.. |set| image:: ../_images/_imageMicroBit/p47.png
+
+Konačni izgled koda:
+
+.. image:: ../_images/_imageMicroBit/p46.png
+      :align: center
+
+.. mchoice:: L5Z1
+    :answer_a: 2.
+    :answer_b: 10.
+    :answer_c: 4.
+    :feedback_a: Odgovor je točan!
+    :feedback_b: Odgovor nije točan!
+    :feedback_c: Odgovor nije točan!
+    :correct: a
+
+    Napravite program koji sadrži dvije varijable: x i y. Dodijelite varijabli x vrijednosti 2 (x = 2) i varijabli y do 4 (y = 4).
+    Kad program izvrši blok prikazan na slici, rezultat će biti:
+
+    .. image:: ../_images/_imageMicroBit/p48.png
+          :align: center
+
+
+Koristimo aritmetičke operatore i varijable za izradu programa za izračunavanje veličine i površine kvadrata.
+
+Da bismo izračunali površinu kvadrata, moramo definirati dimenziju stranice ``a``, čija će se vrijednost nasumično mijenjati, svaki put kada korisnik pritisne gumb ``A``, a kad pritisne gumb ``B`` izračunava se glasnoća i površina.
+
+Na samom početku potrebno je stvoriti varijable ``a``, ``P`` and ``A``, koje zauzvrat predstavljaju stranicu, opseg i područje kvadrata.
+
+Definirat ćemo slučajnu promjenu vrijednosti varijable pomoću bloka |pickrandom|.
+
+.. |pickrandom| image:: ../_images/_imageMicroBit/p49.png
+
+Izgled koda kada je definirana i dodijeljena početna vrijednost varijable a u blok |onbutton|:
+
+.. |onbutton| image:: ../_images/_imageMicroBit/p18.png
+
+
+.. image:: ../_images/_imageMicroBit/p50.png
+      :align: center
+
+Da bismo vidjeli koja je vrijednost duljine stranice ``a``, možemo povući blok zaslona |shownumber|.
+
+
+.. |shownumber| image:: ../_images/_imageMicroBit/15.png
+
+Izgled bloka:
+
+.. image:: ../_images/_imageMicroBit/p51.png
+      :align: center
+
+Da bismo izračunali opseg i površinu kvadrata, moramo se podsjetiti da je opseg kvadrata 4 * duljina stranice (``4*a``) i da je površina proizvoda duljina stranica (``a*a``). Za izračun koristimo operaciju množenja. Izgled bloka za izračunavanje veličine i površine kvadrata je:
+
+.. image:: ../_images/_imageMicroBit/p52.png
+      :align: center
+
+Da bismo testirali program, pokrećemo ga u simulatoru klikom na gumb |play|.
+
+.. |play| image:: ../_images/_imageMicroBit/p3.png
+
+.. mchoice:: L5Z2
+    :answer_a: Bilo koja vrijednost iz intervala od 0 do 15, isključujući 0.
+    :answer_b: Bilo koja vrijednost od intervala 0 do 15, uključujući te vrijednosti.
+    :answer_c: Svaka vrijednost od intervala 0 do 15, isključujući 15.
+    :correct: b
+    :feedback_a: Odgovor nije točan!
+    :feedback_b: Odgovor je točan!
+    :feedback_c: Odgovor nije točan!
+
+    Pažljivo proučite blok:
+
+    .. image:: ../_images/_imageMicroBit/p53.png
+          :align: center
+
+    Koliku će vrijednost varijabla Brojač imati kada se napravi pokret (shake)?

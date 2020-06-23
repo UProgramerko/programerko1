@@ -1,0 +1,98 @@
+=============================
+Projektni zadatak - Narukvica 
+=============================
+
+Na kraju drugog razreda jedne osnovne škole, učenici predstavljaju roditeljima sve što su naučili tijekom drugog razreda. Tijekom događaja nekoliko bi učenika trebalo imati na rukama narukvice koje bi pomicanjem ruke izbacivale cvijetiće.
+
+Narukvica za izbacivanje cvijeta može se napraviti pomoću Micro:bit uređaja, uključivanjem i isključivanjem LED dioda da bi se simuliralo izbacivanje cvijeta kada korisnik pomakne ruku. 
+
+.. image:: ../_images/_imageMicroBit/Narukvica1.png
+      :align: center
+
+Da biste izradili narukvicu trebate:
+
+- 1 Micro:bit
+- Tkanina ili kolaž papir
+- škare 
+- Ljepljiva traka/konac
+
+Potrebno je programirati Micro:bit da bi igrao ulogu da kad korisnik trese uređaj na zaslonu (5x5 LED-ova) prikazuje se cvijet.
+
+**Korak 1**
+
+Idite na https://makecode.microbit.org/.
+
+Želimo programirati da se na display-u Micro:bit-a prikaže cvijetić kada se napravi neki pokret, točnije, želimo registrirati bilo koji pokret s Micro:bit-a koristeći akcelerometar na Micro:bit-u. Tek kada se prepozna kretanje, na zaslonu se prikazuje željena slika (uključivanjem LED-ova).  
+
+Da bismo riješili taj problem, koristimo blok grane uz uvjet da je kretanje izvršeno. Koji je redak (grana) koda odabran, ovisi o ispunjenom uvjetu, ako je kretanje registrirano, na Micro:bit-u će se prikazati cvijet, a ako ne, LED diode neće biti uključene. 
+
+**Korak 2**
+
+Započnite novi projekt i u blok |forever|, nalazi se u kategoriji |Basic|, dodaj blok |if..then| iz kategorije |Logic|.
+
+
+.. |forever| image:: ../_images/_imageMicroBit/s1.png
+.. |Basic| image:: ../_images/_imageMicroBit/s2.png
+.. |if..then| image:: ../_images/_imageMicroBit/s3.png
+.. |Logic| image:: ../_images/_imageMicroBit/s4.png
+
+U bloku ``forever`` blokovi unutar njega ponavljaju se dok se Micro:bit ne isključi.
+
+U odjeljku za uvjet |uslov| privucite blok |uslov1| (nalazi se u kategoriji |Input|).
+
+.. |uslov| image:: ../_images/_imageMicroBit/s5.png
+.. |Input| image:: ../_images/_imageMicroBit/s6.png
+.. |uslov1| image:: ../_images/_imageMicroBit/s7.png
+
+S padajućeg popisa blokova |uslov1|:
+
+.. image:: ../_images/_imageMicroBit/s8.png
+      :align: center
+
+izaberite opciju |shake|. Ova opcija registrira pokrete. 
+
+.. |shake| image:: ../_images/_imageMicroBit/s9.png
+
+.. image:: ../_images/_imageMicroBit/s10.png
+      :align: center
+
+Na osnovu postavljanja problema, kada je kretanje registrirano (ili u našem slučaju kada je ispunjen uvjet), na Micro:bit-u će se prikazati cvijet. Potrebno je povući unutar grana (ispunjeni uvjet ili grana DA) da biste prikazali cvijet (uključivanje željenih LED-ova) iz kategorije ``Basic``:
+
+.. image:: ../_images/_imageMicroBit/s12.png
+      :align: center
+
+Za prikaz cvijeća upotrijebit ćemo tri bloka ``show leds``. koji će se koristiti za prikaz željene slike cvijeća.
+Izgled programa kada je pokret napravljen:
+
+.. image:: ../_images/_imageMicroBit/s13.png
+      :align: center
+
+Na osnovu postavljenog problema postoji i uvjet kad nema pomicanja na Micro:bit prikazu, ništa se ne smije prikazivati. Da bismo to postigli, moramo dodati granu u kojoj će se blokovi izvršavati kada uvjet nije ispunjen (u našem slučaju kad nema kretanja) klikom na znak |plus|. Unutar te grane postavili smo blok za čišćenje Micro:bit ekrana |clear|.
+
+.. |plus| image:: ../_images/_imageMicroBit/s15.png
+.. |clear| image:: ../_images/_imageMicroBit/s14.png
+
+Konačni izgled koda narukvice:
+
+.. image:: ../_images/_imageMicroBit/s16.png
+      :align: center
+
+Simulacija:
+
+      .. image:: ../_images/_imageMicroBit/s17.png
+            :align: center
+
+**Korak 3**
+
+Jednim klikom na tipku |dugme1| ili tipka |dugme2| preuzmite .hex file na vaše računalo. Povlačenjem datoteke na Micro:bit, on je spreman za rad.
+
+.. |dugme1| image:: ../_images/_imageMicroBit/s19.png
+.. |dugme2| image:: ../_images/_imageMicroBit/29.png
+      :width: 199px
+
+Jednom kada je Micro:bit programiran, samo ga morate staviti u već izrađenu narukvicu i započeti ga koristiti.
+
+Narukvica:
+
+.. image:: ../_images/_imageMicroBit/Narukvica2.png
+      :align: center

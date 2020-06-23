@@ -1,0 +1,91 @@
+Projektni zadatak - Upotreba senzora
+====================================
+
+**Upotreba senzora dodirom**
+
+Prvo ćemo programirati jednostavno kretanje robota sve dok senzor dodira ne dodiruje rukom. Cilj ovog programa je zadržati robota dok se senzor ne dodirne rukom.
+
+.. image:: ../_images/_imageEV3/17_.png
+      :align: center
+
+Na temelju postavljanja zadatka, robot bi trebao krenuti naprijed. To ćemo postići dodavanjem bloka |pravo| (robot kreće naprijed).
+
+.. |pravo| image:: ../_images/_imageEV3/6.png
+
+Sljedeći korak bio bi povlačenje bloka |Pause| iz kategorije |senzor|. S padajućeg popisa ovog bloka izabrat ćemo opciju 1, koja predstavlja priključak spojen na senzor osjetljiv na dodir.
+Zatim trebamo odabrati opciju pritisnuto, koja predstavlja stanje senzora dodira. (Kad ruka dodirne senzor)).
+Nakon toga, na temelju postavljanja zadatka, robot bi se trebao zaustaviti, što će se postići dodavanjem bloka |Stop|. Na ovaj način zaustavljen je robot.
+
+.. |senzor| image:: ../_images/_imageEV3/22.png
+.. |Pause| image:: ../_images/_imageEV3/23.png
+.. |Stop| image:: ../_images/_imageEV3/14.png
+
+Izgled programa:
+
+.. image:: ../_images/_imageEV3/24.png
+      :align: center
+
+Spojite EV3 Brick s računalom putem USB kabela i preuzmite .uf2 datoteku na svoje računalo klikom na gumb |dugme1|. Povlačenjem datoteke na EV3 spremno je za početak rada.
+
+.. |dugme1| image:: ../_images/_imageEV3/download.png
+            :width: 199px
+
+**Korištenje senzora boja**
+
+Senzor u boji je digitalni senzor koji može otkriti boju ili intenzitet svjetlosti koja ulazi kroz mali prozor na prednjoj strani senzora. Ovaj se senzor može koristiti na tri različita načina:
+
+•	Colore Mode,
+
+•	Reflected Light Intensity Mode (Način rada reflektirane svjetlosti), i
+
+•	Ambient Light Intensity Mode (Način intenziteta ambijentalnog svjetla).
+
+U Color Mode-u, Color senzor prepoznaje sedam boja - crna, plava, zelena, žuta, crvena, bijelu, smeđu i bez boje:
+
+.. image:: ../_images/_imageEV3/24_.png
+      :align: center
+
+Ova sposobnost razlikovanja boja znači da se robot može programirati za sortiranje obojenih kuglica ili blokova, izgovaranje imena detektiranih boja ili zaustavljanje kad ugleda crvenu. 
+
+.. image:: ../_images/_imageEV3/27.png
+      :align: center
+
+U Reflected Light Intensity Mode-u, Color senzor mjeri jačinu svjetlosti koja prolazi kroz prozor iz okruženja, kao što je sunčeva svjetlost ili snop baterijske lampe. Senzor koristi opciju tamna (vrlo tamna) i svijetla (vrlo svijetla). To znači da se robot može programirati tako da se kreće po bijeloj površini dok ne otkrije crnu liniju ili da protumači obojenu površinu identifikacijske kartice.
+
+U Ambient Light Intensity Mode-u, Color senzor mjeri jačinu svjetlosti koja kroz prozor ulazi iz njegove okoline, poput sunčeve svjetlosti ili snopa svjetiljke. Senzor koristi opciju tamna (vrlo tamna) i svijetla (vrlo svijetla). To znači da se robot može programirati tako da aktivira alarm za buđenje kada Sunce izlazi ujutro ili da prestane raditi kad se svjetla ugase.
+
+.. image:: ../_images/_imageEV3/28.png
+      :align: center
+
+Dokazat ćemo uporabu senzora boja izradom programa koji će omogućiti kretanje robota dok ne ugleda zelenu boju. Kad robot ugleda zeleno, prestat će. 
+
+Na temelju postavljanja zadatka, robot bi trebao krenuti naprijed. To ćete postići dodavanjem bloka |pravo| (robot krećenaprijed). Zatim, iz kategorije |Senzor| mi ćemo odabrati blok |PauseColor|. S padajućeg popisa ovog bloka izabrat ćemo opciju 3, koja predstavlja priključak spojen na senzor u boji. Sljedeći korak je odabir boje s padajućeg popisa |Boja| klikom na (u našem slučaju zelenu). A zatim, na temelju uvjeta zadatka, robot bi se trebao zaustaviti, što će se postići dodavanjem bloka |Stop|. Na ovaj će se način robot zaustaviti. 
+
+.. |PauseColor| image:: ../_images/_imageEV3/29.png
+.. |Boja| image:: ../_images/_imageEV3/30.png
+
+Kod programa i izgled simulacije (robot se kreće dok ne vidi zelenu boju):
+
+.. image:: ../_images/_imageEV3/313233.png
+      :align: center
+
+Spojite EV3 Brick s računalom putem USB kabela i preuzmite .uf2 datoteku na svoje računalo klikom na tipku |dugme1|. Povlačenjem datoteke na EV3 spremno je za početak rada.
+
+
+**Korištenje ultrazvučnog senzora**
+
+Dokazat ćemo uporabu ultrazvučnog senzora kreiranjem programa koji će omogućiti kretanje robota dok ne naiđe na prepreku.
+
+Na temelju postavljanja zadatka, robot bi trebao krenuti naprijed. To ćete postići dodavanjem bloka |pravo| (robot kreće naprijed).
+
+Zatim, iz kategorije |Senzor| mi ćemo odabrati blok |ultra|. S padajućeg popisa ovog bloka izabrat ćemo opciju ``4``, koja predstavlja priključak spojen na ultrazvučni senzor. Iz padajućeg izbornika |meni| izabrat ćemo opciju ``near`` (u našem slučaju zelena). Budući da se na temelju uvjeta zadatka, robot treba zaustaviti. To će se postići dodavanjem bloka |Stop|. Na ovaj će se način robot zaustaviti.
+
+.. |ultra| image:: ../_images/_imageEV3/38.png
+.. |meni| image:: ../_images/_imageEV3/39.png
+
+Kod programa i izgled simulacije (robot se kreće dok ne ugleda objekt):
+
+.. image:: ../_images/_imageEV3/353637.png
+      :align: center
+
+Spojite EV3 Brick s računalom putem USB kabela i preuzmite .uf2 datoteku na svoje računalo klikom na tipku |dugme1|. Povlačenjem datoteke na EV3 spremno je za početak rada.

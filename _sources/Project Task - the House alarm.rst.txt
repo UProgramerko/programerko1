@@ -1,0 +1,229 @@
+=========================
+Projektni zadatak – Alarm
+=========================
+
+Alarmi su uređaji koji komuniciraju s središnjom upravljačkom jedinicom putem elektroničke mreže i šalju signale o mogućim pokretima i promjenama, koje detektiraju senzori.
+
+Tipični kućni alarmni sustav sadrži sljedeće komponente:
+
+- Upravljačka ploča, koja je zapravo središnja upravljačka jedinica alarmnog sustava
+
+- Senzori na vratima, prozorima ili bilo komadu namještaja
+
+- Senzori pokreta, unutarnji i vanjski
+
+- Vrlo glasna sirena ili alarm.
+
+Princip rada vrlo je jednostavan: alarmni sustavi osiguravaju ulazne točke ili mjesta koja omogućavaju pristup kući, stanu ili radnom prostoru, senzore koji komuniciraju s glavnom upravljačkom jedinicom. Senzori se obično nalaze na vratima ili prozorima, ali i na drugim otvorima koji omogućuju pristup iznutra.
+
+Uređaj alarm mora otkriti pokrete, kao i promjene u sobnoj temperaturi i osvjetljenju. Ako se vrata otvore i poraste sobna temperatura ili se poveća intenzitet svjetla, uređaj će se oglasiti.
+
+Da biste stvorili uređaj alarm, morate:
+
+- 3 Micro:bita
+
+- samoljepljiva traka
+
+- zvučnik ili slušalice
+
+- krokodilke
+
+Da biste stvorili uređaj alarm, prvo morate kreirati fizički uređaj koji se sastoji od Micro:bit-a za ulogu senzora koji detektira pokrete, promjene temperature i osvjetljenja prostorije i Micro:bit za djelovanje kada se u prostoriji pojave promjene (Micro:bit na koji je spojen zvučnik) mora se postaviti oko 10 metara od senzora. 
+
+Sada kada smo izgradili uređaj alarm, moramo stvoriti programe za svaki Micro:bit.
+
+Sva tri Micro:bit-a moraju se programirati odvojeno:
+
+­1. Jedan ima ulogu otkrivanja pokreta.
+2. Drugi se koristi za otkrivanje promjena temperature ili osvjetljenja.
+3. Treći se koristi za stvaranje zvuka kada se otkriju gibanje, promjena temperature ili promjena osvjetljenja prostorije.
+
+**Korak 1**
+
+Idite na https://makecode.microbit.org/.
+
+Prvo ćemo programirati Micro:bit pomoću kojeg ćemo detektirati pokrete.
+
+**Korak 2**
+
+Napravite novi projekt.
+
+Sada želimo programirati otkrivanje pokreta, točnije, želimo registrirati kretanje pomoću Micro:bit-a.
+
+Kad želimo uspostaviti komunikaciju (koristiti radijsku komunikaciju) između Micro:bit-ova, svi uključeni Micro:bit-ovi moraju pripadati istoj grupi ili koristiti isti ID grupe.
+
+**Korak 3**
+
+Stvarajući ID grupu, on zapravo stvara prostor u kojem će uređaji komunicirati.
+
+Za izradu ID grupe iz kategorije |Radio| povlačimo blok |radioset| u blok |onstart| iz kategorije |Basic|. U prostor |ID| unosimo željeni broj za ID grupe. To može biti bilo koji broj. Ostavit ćemo da bude 1. Tako smo stvorili grupu s ID 1 u kojoj će komunicirati svi Micro:bit-ovi.
+
+.. |Radio| image:: ../_images/_imageMicroBit/s21.png
+.. |radioset| image:: ../_images/_imageMicroBit/s22.png
+.. |Basic| image:: ../_images/_imageMicroBit/s2.png
+.. |ID| image:: ../_images/_imageMicroBit/s23.png
+.. |onstart| image:: ../_images/_imageMicroBit/onstart.png
+
+Dio koda koji stvara komunikacijsku skupinu:
+
+.. image:: ../_images/_imageMicroBit/s24.png
+      :align: center
+
+**Korak 4**
+
+U blok |forever|, nalazi se u kategoriji |Basic|, povucite blok |if..then| iz kategorije |Logic|.
+
+.. |forever| image:: ../_images/_imageMicroBit/s1.png
+.. |if..then| image:: ../_images/_imageMicroBit/s3.png
+.. |Logic| image:: ../_images/_imageMicroBit/s4.png
+
+U dijelu za uvjet |uslov| povucite blok |uslov1| (nalazi se u kategoriji |Input|).
+
+.. |uslov| image:: ../_images/_imageMicroBit/s5.png
+.. |Input| image:: ../_images/_imageMicroBit/s6.png
+.. |uslov1| image:: ../_images/_imageMicroBit/s7.png
+
+Iz padajućeg izbornika bloka |uslov1|:
+
+.. image:: ../_images/_imageMicroBit/s8.png
+      :align: center
+
+izaberete opciju |shake|. Ova opcija registrira pokrete.
+
+.. |shake| image:: ../_images/_imageMicroBit/s9.png
+
+.. image:: ../_images/_imageMicroBit/s10.png
+      :align: center
+
+Na temelju postavljanja problema, kada je gibanje registrirano (ili u našem slučaju kada je uvjet ispunjen), pomoću bloka |radiosend| šaljemo neku vrijednost Micro:bit-u.
+
+U polje |broj| unosimo broj 5 (može se unijeti bilo koja vrijednost). Da bi senzor odgovorio, točnije detektirao pokrete, postavit ćemo mu da traje određeno vrijeme, neka to bude 3 sekunde (ili 3000 milisekundi). Za to ćemo koristiti blok |time| iz kategorije |Basic|. U polje |vreme| unosimo 3000ms, što će biti vrijeme kada senzor odgovori na nastalu promjenu.
+
+.. |broj| image:: ../_images/_imageMicroBit/s32.png
+.. |vreme| image:: ../_images/_imageMicroBit/s40.png
+.. |time| image:: ../_images/_imageMicroBit/s39.png
+.. |radiosend| image:: ../_images/_imageMicroBit/s30.png
+
+.. image:: ../_images/_imageMicroBit/s48.png
+      :align: center
+
+**Korak 5**
+
+Klikom na tipku |dugme1| ili tipku |dugme2| preuzmite .hex datoteku na vaše računalo. Povlačenjem datoteke na Micro:bit, on je spreman za rad.
+
+.. |dugme1| image:: ../_images/_imageMicroBit/s49.png
+.. |dugme2| image:: ../_images/_imageMicroBit/29.png
+      :width: 199px
+
+**Korak 6**
+
+Sada je potrebno programirati Micro:bit za otkrivanje promjena u temperaturi i intenzitetu svjetlosti i te podatke poslati Micro:bit-u kako bi se oglasili. 
+Kako bi Micro:bit-ovi mogli komunicirati, oni trebaju pripadati istoj ID grupi.
+
+Stvorena je grupa s ID 1 u kojoj će svi Micro:bit-ovi komunicirati:
+
+.. image:: ../_images/_imageMicroBit/s24.png
+      :align: center
+
+U blok |forever| povucite blok |if..then| iz kategorije |Logic|. U dijelu za uvjet |uslov| moramo povući blokove koji definiraju uvjete da je temperatura veća od 30 ili da je intenzitet svjetlosti veći od 150. 
+
+Uvjeti mogu biti složeni (stvoreni spajanjem jednostavnih uvjeta).
+
+U našem su slučaju jednostavni uvjeti da je temperatura veća od 30 ili da je intenzitet osvjetljenja veći od 140.
+
+.. |poredjenje| image:: ../_images/_imageMicroBit/s53.png
+
+Jednostavne uvjete definiramo u blokovima |poredjenje|.
+
+U našem slučaju uvjete definiramo na sljedeći način:
+
+- temperatura |temperatura| veća od 30: |vece30|.
+
+- intenzitet osvjetljenja |intenzitet| veći od 150: |vece150|.
+
+.. |temperatura| image:: ../_images/_imageMicroBit/s55.png
+.. |intenzitet| image:: ../_images/_imageMicroBit/s54.png
+.. |vece30| image:: ../_images/_imageMicroBit/s56.png
+.. |vece150| image:: ../_images/_imageMicroBit/s57.png
+
+Za povezivanje jednostavnih uvjeta koristite logičke operatore (I, ILI, NE) - eng (AND, OR, NOT).
+
+U MakeCode-u su logički operatori prikazani kako slijedi:
+
+|and| - Povezuje dva uvjeta i kao rezultat vraća Točno ako su oba uvjeta Točna.
+
+|or| - Povezuje dva uvjeta, i kao rezultat vraća Točno ako je barem jedan uvjet Točan.
+
+|not| - Stavlja se ispred jednog uvjeta, i kao rezultat vraća Točno u slučaju da uvjet nije zadovoljen.
+
+.. |and| image:: ../_images/_imageMicroBit/s50.png
+.. |or| image:: ../_images/_imageMicroBit/s51.png
+.. |not| image:: ../_images/_imageMicroBit/s52.png
+
+Uvjet za provjeru je li došlo do promjene temperature ili intenziteta osvjetljenja definiran je blokom:
+
+.. image:: ../_images/_imageMicroBit/s58.png
+      :align: center
+
+Uvjetni izgled bloka:
+
+.. image:: ../_images/_imageMicroBit/s60.png
+      :align: center
+
+Na temelju postavljenog zadatka, kada se registrira promjena temperature ili svjetline, on šalje neku vrijednost Micro:bit-a koristeći blok |radiosend|. U tekstnom polju |broj| unosimo broj 10 (može se unijeti bilo koja vrijednost). Da bi senzor odgovorio, točnije detektirao pokrete, postavit ćemo mu da traje određeno vrijeme, neka to bude 3 sekunde (ili 3000 milisekundi). Za to ćemo koristiti blok |time| iz kategorije |Basic|. U polje |vreme| unosimo 3000ms, što će biti vrijeme kada senzor odgovori na nastalu promjenu.
+
+Izgled programa kada se utvrdi promjena temperature ili osvjetljenja:
+
+.. image:: ../_images/_imageMicroBit/s59.png
+      :align: center
+
+**Korak 7**
+
+Klikom na tipku |dugme1| ili tipku |dugme2| preuzmite .hex datoteku na vaše računalo. Povlačenjem datoteke na Micro:bit on je spreman za rad.
+
+.. |dugme11| image:: ../_images/_imageMicroBit/s61.png
+.. |dugme21| image:: ../_images/_imageMicroBit/29.png
+      :width: 199px
+
+**Korak 8**
+
+I na kraju, treći Micro:bit (oglašivač) mora se programirati tako da zvuči glasno kad prima informacije od druga dva Micro:bit-a.
+
+Stvaramo grupu s ID-om 1:
+
+.. image:: ../_images/_imageMicroBit/s24.png
+      :align: center
+
+Sljedeći korak je za ovaj Micro:bit primiti informacije (u našem slučaju broj) na osnovu kojih će "reagirati" izdajući zvuk. Za to ćemo iz kategorije |Radio| povući blok:
+
+.. image:: ../_images/_imageMicroBit/s30.png
+      :align: center
+
+U njega ćemo povući blok |if..then|. U dijelu za uvjet |uslov| moramo to povući uvjet, koji provjerava prijem brojeva (5, 10) s druga dva Micro:bita.
+
+Upotrebom znaka |plus|, uvodimo još jedan uvjet. U grani gdje je uvjet |uslov5| i uvjet |uslov10|, povlačimo blok |melodija| (iz padajućeg izbornika biramo ``ringtone``) iz kategorije |Music|, kojim se reproducira zvuk.
+Pored ovog bloka dodajemo i vremenski interval od jedne sekunde.
+
+.. |plus| image:: ../_images/_imageMicroBit/s15.png
+.. |uslov5| image:: ../_images/_imageMicroBit/s63.png
+.. |uslov10| image:: ../_images/_imageMicroBit/s64.png
+.. |melodija| image:: ../_images/_imageMicroBit/s65.png
+.. |Music| image:: ../_images/_imageMicroBit/s66.png
+
+Konačni izgled koda:
+
+.. image:: ../_images/_imageMicroBit/s67.png
+      :align: center
+
+**Napomena**: Da bi se audio mogao reproducirati Micro:bit mora biti spojen na zvučnike ili slušalice kako slijedi:
+
+.. image:: ../_images/_imageMicroBit/34.png
+      :align: center
+
+**Korak 9**
+
+Klikom na tipku |dugme1| ili tipku |dugme2| preuzmite .hex datoteku na vaše računalo. Povlačenjem datoteke na Micro:bit on je spreman za rad.
+
+.. |dugme01| image:: ../_images/_imageMicroBit/s62.png
+.. |dugme02| image:: ../_images/_imageMicroBit/29.png
+      :width: 199px

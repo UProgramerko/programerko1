@@ -1,0 +1,120 @@
+Rad s blokovima iz kategorije Led
+=================================
+
+U ovom ćemo se dijelu upoznati s blokovima iz kategorije |led|, i određivanjem položaja LED-ova na zaslonu kako biste ih mogli uključiti na temelju njihovog položaja na zaslonu.
+
+.. |led| image:: ../_images/_imageMicroBit/p24.png
+
+Cartesian koordinatni sustav koristi se u matematici za definiranje položaja točaka u prostoru. U Cartesian koordinatnom sustavu u ravnini su definirane dvije osi: ``x`` i ``y``.
+
+Simulacije Micro:bit-a i MakeCode koriste ovaj sustav za određivanje položaja LED na ekranu. Osi ``x`` i ``y`` tvore mrežu 5 x 5, mrežu vrsta i stupaca, gdje je 5 dioda smješteno u vodoravnoj osi ``x`` (red ili vrsta), a 5 dioda na okomitoj osi ``y`` (stupac). Gornji lijevi kut ima koordinat (0,0), dok se vrijednosti x koordinata kreću od 0 do 4 i povećavaju se za 1 s lijeva na desno, a vrijednosti y koordinate u rasponu od 0 do 4 i povećavaju se za 1 od vrha prema dolje. Na primjer, ako je ledena dioda u prvom redu, a u trećem stupcu, njena koordinata je (0,2).
+
+.. image:: ../_images/_imageMicroBit/p25.png
+      :align: center
+
+Napravite program za aktiviranje diode na položaju (3,3).
+
+U radnu površinu u blok |onstart| povlačimo blok |plot| iz kategorije |led|.
+
+.. |onstart| image:: ../_images/_imageMicroBit/s20.png
+.. |plot| image:: ../_images/_imageMicroBit/p26.png
+
+.. |play| image:: ../_images/_imageMicroBit/p3.png
+
+Konačni izgled koda:
+
+.. image:: ../_images/_imageMicroBit/p29.png
+      :align: center
+
+Da bismo testirali program, pokrećemo ga u simulatoru klikom na tipku |play|.
+
+.. mchoice:: L4Z1
+    :answer_a: LED dioda na simulatoru A.
+    :answer_b: LED dioda na simulatoru B.
+    :answer_c: LED dioda na simulatoru C.
+    :feedback_a: Odgovor je točan!
+    :feedback_b: Odgovor nije točan!
+    :feedback_c: Odgovor nije točan!
+    :correct: a
+
+    Pogledajte pažljivo izgled bloka.
+
+    .. image:: ../_images/_imageMicroBit/p31.png
+          :align: center
+
+    Nakon pokretanja programa, koja će dioda biti upaljena na zaslonu?
+
+    .. image:: ../_images/_imageMicroBit/p30.png
+          :align: center
+
+
+Ako želimo ugasiti LED koristimo blok |unplot|, u kojem definiramo položaj (koordinate) diode koju želimo isključiti. Drugim riječima, definiramo koordinate x i y led diode.
+
+.. |unplot| image:: ../_images/_imageMicroBit/p27.png
+
+**Zadatak.** Uključite sve LED žarulje na početku. Kad korisnik pritisne tipku A, LED diode u kutovima zaslona se isključuju.
+
+Usporedite svoje rješenje s našim: https://makecode.microbit.org/_4e6RXM5FmA8M
+
+**Zadatak.** Napravite program za simuliranje semafora naizmjenično uključivanjem i isključivanjem LED dioda koje se nalaze u trećem redu i drugom, trećem i četvrtom stupcu.
+
+**Mala pomoć:** Dok se semafori na određeno vrijeme uključuju i isključuju (neka bude 1 sekunda), blok |pause| se koristi za definiranje intervala.
+
+.. |pause| image:: ../_images/_imageMicroBit/s39.png
+
+Uporedite svoje rešenje sa našim: https://makecode.microbit.org/_TRPRj98xj2Ap
+
+Blok |toogle| je blok koji se koristi za uključivanje LED ako je isključen, ili kad je uključen. Naravno, u ovom bloku potrebno je postaviti vrijednosti za koordinate x i y.
+
+.. |toogle| image:: ../_images/_imageMicroBit/p28.png
+
+.. mchoice:: L4Z2
+    :answer_a: Lampica koja će se ugasiti nakon 1 milisekunde.
+    :answer_b: Lampica koja se pali i gasi na svakih 1 milisekundu.
+    :answer_c: Lampica koja će se upaliti nakon 1 milisekunde.
+    :feedback_a: Odgovor nije točan!
+    :feedback_b: Odgovor je točan!
+    :feedback_c: Odgovor nije točan!
+    :correct: b
+
+
+     Pogledajte pažljivo izgled bloka.
+
+    .. image:: ../_images/_imageMicroBit/p32.png
+          :align: center
+
+    Izvršavanjem gornjih blokova što će se prikazati?
+
+Dodatak: Za analizu ulaznih podataka (grafički), u našem slučaju razinu, osvjetljenja može koristiti blok |plotbar| u koju unosimo početnu i krajnju vrijednost intervala koji ćemo analizirati.
+
+.. |plotbar| image:: ../_images/_imageMicroBit/p33.png
+
+U našem slučaju početna vrijednost bit će blok |level| (koja pohranjuje vrijednost očitavanja senzora svjetlosti), a konačna vrijednost bit će 255, jer se količina izmjerene svjetlosti dobije od 0 do 255.
+
+.. |level| image:: ../_images/_imageMicroBit/s54.png
+.. |forever| image:: ../_images/_imageMicroBit/s1.png
+.. |Basic| image:: ../_images/_imageMicroBit/s2.png
+
+Blok |plotbar| povlačimo u blok |forever| iz kategorije |Basic|.
+
+Izgled bloka:
+
+.. image:: ../_images/_imageMicroBit/p34.png
+      :align: center
+
+
+Da bismo testirali program, pokrećemo ga u simulatoru klikom na tipku |play|.
+
+U ovom se slučaju pokreće simulator za grafički prikaz podataka. 
+
+.. image:: ../_images/_imageMicroBit/p37.png
+      :align: center
+
+.. image:: ../_images/_imageMicroBit/p38.png
+      :align: center
+
+
+Ovaj simulator radi sve dok ga ne zaustavimo klikom na tipku |stop|. Ako sakupljene podatke želimo preuzeti s ulaza, možemo ih preuzeti u .csv, format na naše računalo klikom na tipku |preuzmi|. Ovaj dokument sadrži stupce s vremenom (u milisekundama) i izmjerenom razinom svjetlosti.
+
+.. |stop| image:: ../_images/_imageMicroBit/p39.png
+.. |preuzmi| image:: ../_images/_imageMicroBit/p36.png

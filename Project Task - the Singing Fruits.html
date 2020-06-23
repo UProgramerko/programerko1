@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Projektni zadatak – Raspjevane voćke &#8212; Block-based programming in MakeCode</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projektni zadatak - Semafor" href="Project Task - the Traffic Light.html" />
+    <link rel="prev" title="Projektni zadatak - Narukvica" href="Project Task - the Bracelet.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'MakeCode';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = false;
+  eBookConfig.basecourse = 'MakeCode';
+  eBookConfig.runestone_version = '3.1.1';
+  eBookConfig.imagesDir = '_images/';
+  eBookConfig.staticDir = '_static/';
+  if(typeof(Sk) != "undefined")
+      Sk.imgPath = eBookConfig.imagesDir;
+</script>
+
+<div id="fb-root"></div>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <img src="_static/img/logo.png" style="width:80px; height: 80px;"> 
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 10px; margin-left: 25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Block-based programming in MakeCode</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br/>
+
+
+<div class="container col-md-12" id="continue-reading"></div>
+
+<div class="container col-md-8 col-md-offset-2" id="main-content">
+  
+  <div class="section" id="projektni-zadatak-raspjevane-vocke">
+<h1>Projektni zadatak – Raspjevane voćke<a class="headerlink" href="#projektni-zadatak-raspjevane-vocke" title="Permalink to this headline">¶</a></h1>
+<p>Ton predstavlja pravilno, ravnomjerno treperenje (kretnje) zvučnog izvora.</p>
+<p>Ton je zvuk koji ima specifičan:</p>
+<ol class="arabic simple">
+<li><p>visina - određuje se brzinom i brojem treperenja u sekundi. Što je veći broj treperenja u sekundi, tonje zvuči više i obrnuto. Ljudsko uho čuje od 16 (najniži ton koji naše uho može odrediti) - 20.000 (najviši ton koji naše uho može odrediti) treperi/sek.</p></li>
+<li><p>jačina - ovisi o veličini treperenja (amplitude) izvora tona. Što je veća amplituda, glasniji je i ton. Na teren utječe i visina terena. Konkretno, duboki se tonovi čuju znatno manje od visokih.</p></li>
+<li><p>trajanje - ovisi o tome koliko dugo treperi izvor tona. Kad se smiri, zvuk se zaustavlja.</p></li>
+<li><p>boja - ovisi o vrsti materijala, obliku i veličini treperećeg izvora zvuka.</p></li>
+</ol>
+<p>Stvorit ćemo glazbeni instrument koristeći Micro:bit za sviranje glazbene ljestvice.</p>
+<p>Glazbena ljestvica je niz od osam uzastopnih tonova (sedam tonova različitih imena i osmi ton koji predstavlja ponovljeno ime prvog tona), razvrstanih u oktave. Tonovi na ljestvici mogu se čitati abecednim redom i poljima. Abecedno su tonovi: c (ce), d (de), e (e), f (ef), g (ge), a (a) i h (ha), a prema solfegeu: do (ili ut), re, mi, fa, sol (ili so), la, si (ili ti), do.
+Micro:bit ćemo koristit za proizvodnju oktave C, D, E, F, G, A, H (B).</p>
+<p>Za stvaranje našeg klavira trebate:</p>
+<ul class="simple">
+<li><p>4 Micro:bita</p></li>
+<li><p>slušalice</p></li>
+<li><p>krokodilke</p></li>
+<li><p>voćke (8)</p></li>
+<li><p>aluminijska folija</p></li>
+</ul>
+<p>Da bismo stvorili Klavir (Raspjevane voćke), prvo moramo napraviti fizički uređaj koji se sastoji od voća na kojem  ćemo svirati i Micro:bitova.</p>
+<a class="reference internal image-reference" href="_images/v4.jpg"><img alt="_images/v4.jpg" class="align-center" src="_images/v4.jpg" style="width: 500px;" /></a>
+<p>Povezivanje Micro:bit-a s voćem (voće koje ima puno tekućine) i slušalice:</p>
+<p>­Korak 1: Prvi Micro:bit povezujemo tako što uzemljenje (GND) povezujemo sa slušalicama pomoću igle (GND) pomoću krokodilki. Na slici ispod prikazana je veza između uzemljenja i Micro:bit-a (samo za jedan uređaj). GND je uzemljenje koje štiti Micro:bit od strujnog udara. Povezujemo se žicom koja će igrati ulogu uzemljenja. Pored toga, potrebno je spojiti Micro:bit i slušalice putem PIN0. Krokodilke povezujemo s PIN0 i priključkom za slušalice (na vrhu). Važno je da se ne dodiruju veze na ulazu za slušalice.</p>
+<a class="reference internal image-reference" href="_images/v3.jpg"><img alt="_images/v3.jpg" class="align-center" src="_images/v3.jpg" style="width: 500px;" /></a>
+<p>Korak 2: Drugi Micro:bit spajajte krokodilke u GND i žicu te ga povežite s bananom (umetnite kraj kokodilke u bananu). Spojite Micro:bit s tri naranče na PIN0, PIN1 i PIN2 putem krokodilke.</p>
+<p>­Korak 3: Za treći Micro:bit, spojite krokodilke u GND i žicu. Mi povezujemo Micro:bit i naranče s PIN0 putem krokodilke. Spojite Micro:bit i dvije naranče s PIN1 i PIN2 putem krokodilke.</p>
+<p>­Korak 4: Za četvrti Micro:bit spojite krokodilke na GND i žicu. Mi povezujemo Micro:bit i naranče s PIN0 putem krokodilke. Spojite Micro:bit i dvije naranče s PIN1 i PIN2 putem krokodilke.</p>
+<p>Sad kad smo napravili fizički glasovir (Singing Fruits), moramo napraviti programe za svaki Micro:bit.</p>
+<a class="reference internal image-reference" href="_images/v2.jpg"><img alt="_images/v2.jpg" class="align-center" src="_images/v2.jpg" style="width: 500px;" /></a>
+<p><strong>Programiranje</strong></p>
+<p>Potrebno je zasebno programirati sve Micro:bit-ove kako bi međusobno komunicirali i proizvodili zvuk.</p>
+<p><strong>Korak 1</strong></p>
+<p>Idite na <a class="reference external" href="https://makecode.microbit.org/">https://makecode.microbit.org/</a>.</p>
+<p><strong>Korak 2</strong></p>
+<p>Napravite novi projekt.
+Sada želimo programirati Micro:bit-ove za slanje informacija - podudarnih brojeva (za podudaranje tonova) kad se pritisne određeni PIN. Pored toga, moramo programirati Micro:bit-ove za međusobnu komunikaciju. Dakle, ovisno o broju (tonu) koji Micro:bit-ovi “proizvode”, točnije, šalju, Micro:bit prima broj i željeni ton će se reproducirati željeni ton.</p>
+<p><strong>Korak 3</strong></p>
+<p>Kad želimo uspostaviti komunikaciju (koristiti radijsku komunikaciju) između Micro:bit-ova, svi uključeni Micro:bit-ovi moraju pripadati istoj grupi ili koristiti isti ID grupe. Stvarajući ID grupu, on zapravo stvara prostor u kojem će uređaji komunicirati.</p>
+<p>Za izradu ID grupe iz kategorije <img alt="Radio" src="_images/s211.png" /> uzimamo blok <img alt="radioset" src="_images/s221.png" /> i poslačimo ga u blok <img alt="onstart" src="_images/onstart.png" /> iz kategorije <img alt="Basic" src="_images/s2.png" />. U prostor <img alt="ID" src="_images/s231.png" /> unosimo željeni ID grupe. To može biti bilo koji broj. Ostavit ćemo ga da bude 1. Tako smo stvorili grupu s ID 1 u kojoj će komunicirati svi Micro:bit-ovi.</p>
+<p>Dio koda koji stvara komunikacijsku skupinu:</p>
+<img alt="_images/s241.png" class="align-center" src="_images/s241.png" />
+<p><strong>Korak 4</strong></p>
+<p>Da biste poslali radio signal na drugi uređaj koji će na toj osnovi “reagirati” tako da se nakon dodira (pritiska) voćke čuje ton, potrebno je dio koda za registriranje događaja(kada se voće dodirne) uvesti blok <img alt="radiosend" src="_images/s30.png" />.</p>
+<p>Događaj će se zabilježiti kada se jedan od pinova na Micro:bit pritisne. Da bismo to postigli, uvodimo blok <img alt="onpin" src="_images/s251.png" /> iz kategorije <img alt="Input" src="_images/s261.png" />. S popisa određenog bloka odabiremo pin (P0, P1, P2) koji pokreće događaj slanja broja (tona) koji će se prikazati.</p>
+<p>Mora se utvrditi način predstavljanja (pohranjivanja) vrijednosti željenih tonova (srednji C ili 262, srednji D ili 294, srednji E ili 330, srednji F ili 349, srednji G ili 392, srednji A ili 440, srednji B ili 494). Uz to treba definirati vrijednosti za svaku od gornjih napomena.
+Rješenje ovog problema je uvođenje <strong>varijable</strong>.</p>
+<p>Varijablu možete shvatiti kao prostor u memoriji računala, sličan kutiji u kojoj su, tijekom izvršavanja programa, pohranjene neke intermedijarne vrijednosti.
+Varijable imaju svoja imena. Kad želite koristiti vrijednost varijable u programu, dovoljno je navesti njegovo ime.</p>
+<p>Da biste stvorili varijablu, u kategoriji Varijable (1) kliknite gumb Izradi varijablu (2) i u polje unesite naziv varijable (3), u našem slučaju Ton. Klikom na gumb OK (4) stvara se varijabla (5).</p>
+<img alt="_images/s291.png" class="align-center" src="_images/s291.png" />
+<p>Vrijednosti varijable <code class="docutils literal notranslate"><span class="pre">Ton</span></code> kretat će se od 1 do 8.</p>
+<p>U slučaju da se pritisne pin <code class="docutils literal notranslate"><span class="pre">P1</span></code>, za varijablu <code class="docutils literal notranslate"><span class="pre">Ton</span></code>, postavimo početnu vrijednost na 1, koristeći blok <img alt="setTon" src="_images/n1.png" />.</p>
+<p>Radio signal šaljemo Micro:bit-u pomoću bloka <img alt="radiosend" src="_images/s30.png" />, a u dijelu <img alt="blok1" src="_images/s321.png" /> povlačimo varijablu <code class="docutils literal notranslate"><span class="pre">Ton</span></code>, koju želimo poslati, odnosno dobijemo blok <img alt="Ton" src="_images/s331.png" />.</p>
+<p>Dobivamo blok:</p>
+<img alt="_images/s34_.png" class="align-center" src="_images/s34_.png" />
+<p>Isti postupak radimo i za pin <code class="docutils literal notranslate"><span class="pre">P2</span></code>, postavljajući vrijednosti varijable <code class="docutils literal notranslate"><span class="pre">Ton</span></code> na 2, ako pritisne pin <code class="docutils literal notranslate"><span class="pre">P2</span></code>.</p>
+<p>Izgled koda za tipke klavira (C, D):</p>
+<img alt="_images/s341.png" class="align-center" src="_images/s341.png" />
+<p>Konačni izgled programa koji šalje informacije o tome koje se pinovi pritiskaju (<code class="docutils literal notranslate"><span class="pre">P1</span></code> ili <code class="docutils literal notranslate"><span class="pre">P2</span></code>):</p>
+<img alt="_images/n7.png" class="align-center" src="_images/n7.png" />
+<p>Sljedeći je korak Micro:bit-a primiti informacije (u našem slučaju broj) na osnovu kojih će “odgovoriti” izdajući zvuk.</p>
+<p>Da bismo to učinili, povući ćemo blok <img alt="onradio" src="_images/301.png" /> iz kategorije <code class="docutils literal notranslate"><span class="pre">Radio</span></code>. Ovisno o broju (<code class="docutils literal notranslate"><span class="pre">1</span></code> ili <code class="docutils literal notranslate"><span class="pre">2</span></code>) koji je primio Micro:bit Micro:bit igra željeni ton.</p>
+<p>Za to koristimo blok <img alt="ifthen" src="_images/s3.png" /> iz kategorije <img alt="Logic" src="_images/s4.png" />.</p>
+<p>U polju uvjeti povucite blok <img alt="b1" src="_images/n2.png" /> kojim se provjerava je li pin <code class="docutils literal notranslate"><span class="pre">P1</span></code> pritisnut ili ne:</p>
+<img alt="_images/n3.png" class="align-center" src="_images/n3.png" />
+<p>Ako pritisnete pin <code class="docutils literal notranslate"><span class="pre">P1</span></code> čut ćete ton <code class="docutils literal notranslate"><span class="pre">C</span></code>. Za početak reprodukcije tona povucite blok <img alt="playton" src="_images/31_.png" /> iz kategorije <img alt="Music" src="_images/s66.png" />, kojim se reproducira zvuk. U određenom bloku s padajućih popisa biramo ton i dužinu iste:</p>
+<img alt="_images/3132.png" class="align-center" src="_images/3132.png" />
+<p>Izgled bloka:</p>
+<img alt="_images/n4.png" class="align-center" src="_images/n4.png" />
+<p>U blok <img alt="ifthen" src="_images/s3.png" /> dodajemo još jedan uvjet (pritisnut pin <code class="docutils literal notranslate"><span class="pre">P2</span></code>) klikom  na tipku <img alt="plus" src="_images/s151.png" />. Ako je pritisnut pin <code class="docutils literal notranslate"><span class="pre">P2</span></code>, reproducirat će se ton <code class="docutils literal notranslate"><span class="pre">D</span></code>.</p>
+<p>Izgled koda:</p>
+<img alt="_images/n5.png" class="align-center" src="_images/n5.png" />
+<p><strong>Napomena</strong>: Da bi se zvuk mogao reproducirati Micro:bit mora biti spojen na zvučnike ili slušalice kako slijedi.</p>
+<img alt="_images/34.png" class="align-center" src="_images/34.png" />
+<p>Konačni izgled programa <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">D</span></code> tonova:</p>
+<img alt="_images/n6.png" class="align-center" src="_images/n6.png" />
+<p>Jednim klikom na tipku <img alt="dugme1" src="_images/s361.png" /> ili tipku <a class="reference internal" href="_images/291.png"><img alt="dugme2" src="_images/291.png" style="width: 199px;" /></a> preuzmite .hex datoteku na svoje računalo. Povlačenjem datoteke na Micro:bit spremna je za rad.</p>
+<p>Rukom držimo bananu, a drugu ruku koristimo za sviranje po voću.</p>
+<p>Na isti način moraju se programirati i preostala dva Micro:bit-a, srednji E ili 330, F ili 349, srednji G ili 392, srednji A ili 440, srednji B ili 494 tona.</p>
+<p>Završni kod Micro:bit-a preko kojeg se šalju informacije na koje se pritiskaju pinovi za reprodukciju <code class="docutils literal notranslate"><span class="pre">E</span></code>, <code class="docutils literal notranslate"><span class="pre">F</span></code> i <code class="docutils literal notranslate"><span class="pre">G</span></code> tonova na njemu:</p>
+<img alt="_images/n8.png" class="align-center" src="_images/n8.png" />
+<p>Završni kod programa za Micro:bit-a preko kojeg se šalju informacije na kojima se pritiskuju pinovi za reprodukciju <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">H</span></code> i <code class="docutils literal notranslate"><span class="pre">C</span></code> tonova:</p>
+<img alt="_images/n9.png" class="align-center" src="_images/n9.png" />
+<p>Nakon toga, trebate dopuniti kod na Micro:bit koji će biti “oglašivač” zvuka:</p>
+<img alt="_images/n10.png" class="align-center" src="_images/n10.png" />
+<p>Nakon što smo povezali sve voćke i prebacili kodove, možemo svirati neku lijepu pjesmu na našem voćnom klaviru.</p>
+</div>
+
+
+  
+      <div class="col-md-12">
+<ul class="pager">
+        <li id="relations-prev" title='Previous chapter - Projektni zadatak - Narukvica' data-toggle="tooltip"><a href="Project Task - the Bracelet.html">Previous chapter</a></li>
+    
+        <li id="relations-next" title='Next chapter - Projektni zadatak - Semafor' data-toggle="tooltip"><a href="Project Task - the Traffic Light.html">Next chapter</a></li>
+</ul>
+
+<!-- <ul class="pager"> -->
+    <!-- -->
+        <!-- <li id="relations-prev" title='Претходно поглавље - Projektni zadatak - Narukvica' data-toggle="tooltip"><a href="Project Task - the Bracelet.html">Претходно поглавље</a></li> -->
+    <!--  -->
+    <!-- -->
+        <!-- <li id="relations-next" title='Следеће поглавље - Projektni zadatak - Semafor' data-toggle="tooltip"><a href="Project Task - the Traffic Light.html">Следеће поглавље</a></li> -->
+    <!-- -->
+<!-- </ul> -->
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+  
+</div>
+<footer class="footer col-md-12">
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <p class="text-muted">
+                <span class="text-center">&copy; 2019 <a href="https://petlja.org">Petlja.org</a> 
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; vertical-align: text-bottom" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                  
+                  (Created using  <a href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>)</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

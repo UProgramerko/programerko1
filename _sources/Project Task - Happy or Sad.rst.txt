@@ -1,0 +1,71 @@
+Projektni zadatak - Sretan ili Tužan
+====================================
+
+Do sada su svi programi koje smo kreirali bili linearni programi, točnije, to su programi u kojima se naredbe izvršavaju uzastopno, jedna za drugim do kraja programa.
+
+Za razliku od ovih programa, gdje se svaki korak, tj. svaka naredba, izvršava jednom, u algoritmima za donošenje odluke, ili točnije, uvjetnim (granskim) algoritmima, neke će se naredbe izvršavati, a neke neće, što ovisi o tome je li uvjet ispunjen ili ne.
+
+Dokazat ćemo uporabu blokova za donošenje odluka kreiranjem programa koji će na EV3 ekranu prikazivati različite slike, ovisno o tome je li senzor dodira pritisnut ili ne. Ako je senzor pritisnut, EV3 je sretan - na ekranu će se prikazati smiješak, a ako ne, na ekranu će se pojaviti tužno lice.
+
+U nekim programima izvršavanje blokova ne mora se odvijati istim redoslijedom kojim su postavljeni u programu. Blokovi za odlučivanje koriste se kada trebamo odabrati koji će se niz blokova pokretati. Koja će linija (grana) biti odabrana ovisi o tome je li uvjet ispunjen ili ne. Za robota je li ispunjen ili ne uvjet ovisi o informacijama koje primi od senzora.
+
+Da bismo stvorili program koji će prikazati osmijeh ili tužno lice, ovisno o tome je li senzor osjetljiv na dodir pritisnut ili ne, moramo pokrenuti novi projekt.
+
+U blok |Forever| (nalazi se u kategoriji |Loops|) povući ćemo blok |if..then| iz kategorije |Logic|. U polje za unos stanja |uslov| povući ćemo blok |touch|.
+Na temelju postavljanja zadatka, kada se senzor pritisne, program treba prikazati sretno (smiješno) lice. Moramo povući blok |show| iz kategorije |Basic| u granu DA.
+
+.. |forever| image:: ../_images/_imageEV3/46.png
+.. |Loops| image:: ../_images/_imageEV3/43.png
+.. |if..then| image:: ../_images/_imageEV3/45.png
+.. |Logic| image:: ../_images/_imageEV3/44.png
+.. |uslov| image:: ../_images/_imageEV3/47.png
+.. |touch| image:: ../_images/_imageEV3/48.png
+.. |show| image:: ../_images/_imageEV3/50.png
+.. |Basic| image:: ../_images/_imageEV3/49.png
+
+Izgled programa kad se pritisne senzor i simulacija.
+
+.. image:: ../_images/_imageEV3/50_.png
+      :align: center
+
+Vidimo da, čak i kad otpustimo tipku senzora, slika sretnog lica ostaje na zaslonu EV3 Brick. Da bismo ispravili ovu pogrešku, morat ćemo koristiti blok |Clear|.
+
+.. |Clear| image:: ../_images/_imageEV3/54.png
+
+Izgled programa kada se pritisne senzor.
+
+.. image:: ../_images/_imageEV3/55.png
+      :align: center
+
+Na temelju postavljanja zadatka, postoji i uvjet koji omogućava da se tužno lice prikaže na zaslonu EV3 brick-a kada senzor osjetljiv na dodir nije pritisnut. Da bismo to postigli, klikom na znak |Plus| moramo dodati još jednu granu "else". Unutar ove grane dodati ćemo blok koji će na ekranu prikazivati tužno lice.
+
+.. |Plus| image:: ../_images/_imageEV3/56.png
+
+Konačni izgled koda kada se senzor dodira pritisne ili ne pritisne i simulacija:
+
+.. image:: ../_images/_imageEV3/57_.png
+      :align: center
+
+U ovom primjeru gornji redak koda pokrenut će se ako se pritisne gumb, a donji će se pokrenuti ako gumb nije pritisnut. 
+
+Da bismo to ilustrirali, dat ćemo još jedan primjer: Moramo stvoriti aplikaciju s kojom se robot kreće naprijed dok ne vidi prepreku (udaljenost bi trebala biti manja od 30 cm). Kad robot vidi prepreku, trebao bi se okrenuti udesno, pokušavajući ga zaobići.
+
+U blok |Forever| (nalazi se u kategoriji |Loops|) povući ćemo blok |if..then| iz kategorije |Logic|. U polje za uvjet |uslov| povući ćemo blok |operacija|, koji je operator usporedbe. Da bismo stvorili uvjet gdje je udaljenost između robota i prepreke manja od 30cm, sastavit ćemo blok |manje30|. Na temelju postavljanja zadatka, kada je prepreka udaljena manje od 30 cm, robot će skrenuti udesno; u protivnom će se pomaknuti naprijed (ako uvjet nije ispunjen, odnosno, robot ne vidi prepreku).
+
+.. |operacija| image:: ../_images/_imageEV3/59.png
+.. |manje30| image:: ../_images/_imageEV3/61.png
+
+Dodat ćemo blok za okretanje |skreni| i za pomicanje naprijed |pravo|.
+
+.. |skreni| image:: ../_images/_imageEV3/62.png
+.. |pravo| image:: ../_images/_imageEV3/63.png
+
+Izgled konačnog koda:
+
+.. image:: ../_images/_imageEV3/60.png
+      :align: center
+
+Spojite EV3 Brick s računalom putem USB kabela i preuzmite .uf2 datoteku na svoje računalo klikom na tipku |dugme1|. Povlačenjem datoteke na EV3 spremno je za početak rada.
+
+.. |dugme1| image:: ../_images/_imageEV3/download.png
+        :width: 199px

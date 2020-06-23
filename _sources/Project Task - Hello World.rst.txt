@@ -1,0 +1,83 @@
+Projektni zadatak - Pozdrav svijetu
+===================================
+
+Neka ovo bude jednostavan primjer gdje će se u Mincraft-u prikazati poruka "Pozdrav, svijetu!".
+
+Postupak za rješavanje bilo kojeg zadatka (problema) uključuje prolazak kroz svaku od sljedećih faza:
+
+  Faza 1: razmislite o zadatku i napišite ili nacrtajte algoritam (korake) kako biste ga riješili.
+
+  Faza 2: Unesite naredbe tako da se program izvodi u skladu s algoritmom.
+
+  Faza 3: Testirajte program i ispravite pogreške (ako postoje).
+
+Proći ćemo sve faze zajedno i stvorit ćemo program u kojem Minecraft okruženje (stvoreni svijet) pozdravlja.
+
+**Faza 1**
+
+**Razmišljajući o zadatku:** Moramo prikazati poruku "Pozdrav, svijetu!" u stvorenom svijetu.
+
+**Faza 2**
+
+Otvorite ``Code Builder`` (pritiskom na tipku ``C``); pojavit će se prozor za uređivanje u koji možete slagati blokove.
+
+Na temelju algoritma moramo prikazati željenu poruku (tekst: "Pozdrav, svijetu!").
+
+Za prikaz poruke moramo koristiti blok |print| iz kategorije |Blocks|.
+
+.. |print| image:: ../_images/_imageMinecraft/33.png
+
+.. |Blocks| image:: ../_images/_imageMinecraft/33_.png
+
+Ovaj blok ima četiri parametra, koji određuju kako i gdje će se poruka prikazivati (pisati) u svijetu Minecrafta:
+
+- U polje za unos teksta blok ``print``, upisivat ćemo željeni tekst. U našem slučaju to će biti poruka ``Pozdrav, svijetu!``.
+
+- U polje ``of``, možemo odabrati vrstu bloka koji će se koristiti za stvaranje teksta.
+
+- U polje ``at``, odredit ćemo položaj, točnije koordinate na kojima želimo da se tekst prikaže u našem svijetu. Minecraft je trodimenzionalni svijet definiran s tri koordinate (X, Y, Z):
+
+    •	X – koordinata istok/zapad
+
+    •	Y – koordinata prema gore/dolje (koliko je blok smješten gore ili dolje u odnosu na bazu)
+
+    •	Z – koordinata jug/sjever
+
+- U polju ``along``, možemo definirati orijentaciju ili, točnije, osi duž koje je tekst prikazan (ispisan).
+
+U bloku ``on start`` povući ćemo blok ``print`` gdje ćemo staviti sljedeće:
+
+	U polju za unos teksta ``Pozdrav, svijetu!``
+
+	U polju ``of``, iz liste ćemo izabrati ``Block of Diamond`` to će biti „materijal“ koji ćemo koristiti za pisanje poruke.
+
+.. image:: ../_images/_imageMinecraft/35.png
+      :align: center
+      :width: 350px
+
+	U polje ``at``, za unos koordinata x stavit ćemo vrijednost 1.
+
+	``Along`` polje definirat ćemo zajedno odabirom opcije ``East (positive X)`` s padajućeg popisa.
+
+.. image:: ../_images/_imageMinecraft/36.png
+      :align: center
+
+Nakon svih promjena program koji će prikazati poruku izgledat će ovako:
+
+.. image:: ../_images/_imageMinecraft/37.png
+      :align: center
+
+**Faza 3**
+
+Testiranje programa.
+Kliknite na tipku |Play|.
+
+.. |Play| image:: ../_images/_imageMinecraft/15.png
+          :width: 40px
+
+"Pozdrav svijetu!" prikazuje se u svijetu Minecrafta:
+
+.. image:: ../_images/_imageMinecraft/38.png
+      :align: center
+
+Nakon što smo testirali program, možemo zaključiti da je učinio što smo htjeli. Naš pozdrav prikazuje se kada otvorimo naš Minecraft svijet.

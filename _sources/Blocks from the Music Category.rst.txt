@@ -1,0 +1,55 @@
+Blokovi iz kategorija Music
+===========================
+
+Kategorija |Music| sadrži blokove koji reproduciraju ton/melodiju, blok koji djeluje kao "okidač" za pokretanje programa pri reprodukciji melodije, kao i blok za pohranjivanje vrijednosti baznih tonova i njihovih dužina u milisekundama.
+
+.. |Music| image:: ../_images/_imageMicroBit/s66.png
+
+Kreirajmo program koji kad korisnik klikne tipku A reproducira ton D, duljine 1/4.
+
+Povlačimo blok u radnu površinu |onpress| iz kategorije |Input| a unutar njega povlačimo blok |playtone|.
+
+.. |onpress| image:: ../_images/_imageMicroBit/p18.png
+.. |Input| image:: ../_images/_imageMicroBit/s6.png
+.. |playtone| image:: ../_images/_imageMicroBit/p19.png
+
+U zadanom bloku s padajućih popisa biramo ton i duljinu istog reza u milisekundama.
+
+.. image:: ../_images/_imageMicroBit/p20.png
+      :align: center
+
+**Napomena:** Zvuk se reproducira preko zvučnika ili slušalica spojenih na računalo.
+
+Konačni izgled koda:
+
+.. image:: ../_images/_imageMicroBit/p21.png
+      :align: center
+
+.. |play| image:: ../_images/_imageMicroBit/p3.png
+
+Da bismo testirali program, pokrećemo ga u simulatoru klikom na tipku |play|.
+
+**Zadatak.** Napravite program koji će svirati melodiju pjesme "London Bridge".
+
+Koristite ove note:
+
+•	g, a, g, f, e, f, g
+
+•	d, e, f, e, f, g
+
+•	g, a, g, f, e, f, g
+
+•	d, g, e, c.
+
+Usporedite svoje rješenje s našim: https://makecode.microbit.org/_LW3UUKAzocbo
+
+Ako želimo svirati melodiju (niz nota, svaka oduzima određeno vrijeme, sviraju jedna za drugom) koristimo blok |playmelody|, bloka odabiremo melodiju s popisa i njezinu duljinu (hoće li biti objavljena jednom, beskonačno,...)
+
+Konačan izgled koda:
+
+.. image:: ../_images/_imageMicroBit/p23.png
+      :align: center
+
+.. |playmelody| image:: ../_images/_imageMicroBit/p22.png
+
+Da bismo testirali program, pokrećemo ga u simulatoru klikom na tipku |play|.

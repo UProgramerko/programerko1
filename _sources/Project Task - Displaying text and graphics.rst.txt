@@ -1,0 +1,25 @@
+Projektni zadatak - Prikaz teksta i grafike
+===========================================
+
+Još jedan jednostavan primjer stvaranja programa za koji robot kaže "Forward" i istu poruku prikazuje preko ekrana i kreće se ravno.
+
+Na temelju zadatka, robot bi trebao prvo reći "Forward", prikazati istu poruku i započeti se kretati. Važno je prvo povući blok |Play| iz kategorije |Music|, u kojem odabire odgovarajući zvuk iz odgovarajućeg padajućeg izbornika. Ovaj se blok izvršava dok se ne izgovori željena poruka.
+Nakon toga, povlačimo iz kategorije |Brick| blok |Show|, pomoću kojeg se u retku 6 ispisuje željena poruka.
+U dijelu za unos teksta morate unijeti poruku ``Forward``, a ispod je broj retka na kojem će se poruka prikazati na zaslonu brick-a. 
+Zatim se povlači blok kretanja pomoću kojeg robot kreće u 2 rotacije. Za čišćenje, zaslona koristimo blok |Clear|.
+
+.. |Play| image:: ../_images/_imageEV3/16.png
+.. |Music| image:: ../_images/_imageEV3/17.png
+.. |Brick| image:: ../_images/_imageEV3/18.png
+.. |Show| image:: ../_images/_imageEV3/19.png
+.. |Clear| image:: ../_images/_imageEV3/20.png
+
+Izgled programa:
+
+.. image:: ../_images/_imageEV3/21.png
+      :align: center
+
+Priključite EV3 Brick u računalo pomoću USB kabela i klikom na tipku |dugme1| preuzmite .uf2 datoteku na vaše računalo. Povlačenjem datoteke na EV3 on je spreman za rad.
+
+.. |dugme1| image:: ../_images/_imageEV3/download.png
+      :width: 199px

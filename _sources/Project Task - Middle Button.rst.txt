@@ -1,0 +1,94 @@
+Projektni zadatak - Srednja tipka
+=================================
+
+Varijabla pohranjuje vrijednosti koje kasnije možemo koristiti u programu.
+
+Varijabla može biti:
+
+•	Numerička (pohranjuje broj)
+
+•	Logička (pohranjuje logičke vrijednosti točno/netočno)
+
+•	Tekstualna (pohranite tekst "Pozdrav")
+
+Varijabla se može shvatiti kao prostor u memoriji računala, nešto poput okvira u koji tijekom izvršenja programa možemo pohraniti neke privremene vrijednosti. Varijable imaju imena. Kad želimo koristiti vrijednost varijable, dovoljno je upotrijebiti njeno ime.
+
+Varijabla se stvara na sljedeći način, u kategoriji Varijable (1), kliknite na gumb Make a variable (2) i u polje (3) upišite ime varijable. Klikom na gumb OK (4), stvorili ste varijablu.
+
+.. image:: ../_images/_imageEV3/42.png
+      :align: center
+
+Dokazat ćemo uporabu varijabli stvaranjem programa koji prikazuje koliko je puta korisnik pritisnuo srednju tipku na EV3 Bricku-u.
+
+Moramo stvoriti varijablu |Brojac|. Postavit ćemo početnu vrijednost brojača kao 0 koristeći blok |setBrojac|. Zatim povučemo ovaj blok u blok |Start|. Unutar ovog bloka, također ćemo prikazati vrijednost brojača u samom početku na zaslonu EV3 Brick-a koristeći blok |show|.
+
+.. |Brojac| image:: ../_images/_imageEV3/69.png
+.. |setBrojac| image:: ../_images/_imageEV3/70.png
+.. |Start| image:: ../_images/_imageEV3/8.png
+.. |show| image:: ../_images/_imageEV3/77.png
+
+Izgled koda:
+
+.. image:: ../_images/_imageEV3/74.png
+      :align: center
+
+Na temelju postavljanja zadatka, moramo se registrirati svaki put kada korisnik pritisne srednji gumb na brick-u. To će se postići sljedećim blokom:
+
+.. image:: ../_images/_imageEV3/78.png
+      :align: center
+
+Kad se registrira pritisak na srednji gumb brick-a, vrijednost brojača treba counter povećati za 1. To možemo učiniti pomoću bloka |change| iz kategorije |Variable|. Koristit ćemo blok |show| za prikaz nove vrijednosti varijable Brojač.
+
+.. |change| image:: ../_images/_imageEV3/79.png
+.. |Variable| image:: ../_images/_imageEV3/80.png
+
+Izgled koda:
+
+.. image:: ../_images/_imageEV3/75.png
+      :align: center
+
+Izgled konačnog koda:
+
+.. image:: ../_images/_imageEV3/76.png
+      :align: center
+
+Spojite EV3 Brick s računalom putem USB kabela i preuzmite .uf2 datoteku na svoje računalo klikom na tipku |dugme1|. Povlačenjem datoteke na EV3 spremno je za početak rada.
+
+.. |dugme1| image:: ../_images/_imageEV3/download.png
+              :width: 199px
+
+Simulacija:
+
+.. image:: ../_images/_imageEV3/78_.png
+      :align: center
+
+Upotrebu varijabli možemo pokazati i drugim primjerom. Možemo stvoriti program koji će brojati koliko crnih linija je robot LEGO prešao.
+
+Stvorimo varijablu |Brojac|. Koristeći blok |setBrojac|, postavićemo početnu vrijednost na 0.
+Trebali bismo onda povući ovaj blok u blok |Start|. Unutar ovog bloka također ćemo prikazati vrijednost brojača u samom početku na zaslonu EV3 Brick koristeći blok |show|. Također ćemo povući blok |pravo| u dati blok, što će omogućiti kontinuiranom kretanju robota. 
+
+.. |pravo| image:: ../_images/_imageEV3/6.png
+
+Izgled koda:
+
+.. image:: ../_images/_imageEV3/81_.png
+      :align: center
+
+Na temelju postavljanja zadatka, potreban nam je senzor za registraciju crne boje; to ćemo postići upotrebom bloka koji ima padajući popis iz kojeg možemo odabrati crnu boju:
+
+.. image:: ../_images/_imageEV3/25.png
+      :align: center
+
+Kada senzor registrira crno, potrebno je povećati vrijednost brojača za 1. To možemo učiniti pomoću bloka |change| iz kategorije |Variable|. Za prikazivanje nove vrijednosti varijable Brojača, koristiti ćemo blok |show|.
+
+Izgled koda:
+
+.. image:: ../_images/_imageEV3/82_.png
+      :align: center
+
+Izgled konačnog koda:
+
+.. image:: ../_images/_imageEV3/81.png
+      :align: center
+
+Spojite EV3 Brick s računalom putem USB kabela i preuzmite .uf2 datoteku na svoje računalo klikom na tipku |dugme1|. Povlačenjem datoteke na EV3 spremno je za početak rada.

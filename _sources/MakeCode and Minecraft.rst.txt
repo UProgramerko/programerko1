@@ -1,0 +1,172 @@
+Minecraft - osnovne karakteristike i komponente
+===============================================
+
+Minecraft je nevjerojatno popularna, zabavna i kreativna 3D igra u kojoj igrači mogu koristiti postojeće alate za izgradnju struktura i drugih alata. Minecraft se može koristiti za razvijanje kreativnosti i vještina rješavanja problema kod igrača.
+
+Sve što programirate pomoću MakeCode će imati trenutni učinak na vaš Minecraft svijet kada pokrenete program. Ovo je sjajan način da naučite programirati, jer ćete moći odmah vidjeti vizualni utjecaj koda. Ova neposredna povratna informacija pomoći će vam da riješite probleme i omogućiti vam da vidite kakav utjecaj mijenja i ugađa vaš kod na svijet igre u Minecraft-u! Ova povratna veza koju dobijete iz igre tada se može upotrijebiti za ponavljanje ili promjenu koda.
+
+U ovom ćete dijelu naučiti kako se pridružiti Minecraft svijetu i pisati kodove (pomoću MakeCode) kako biste proširili i kontrolirali Minecraft okruženje.
+
+
+Instalacija Minecrafta: Education Edition
+:::::::::::::::::::::::::::::::::::::::::
+
+Da biste instalirali paket, morate dovršiti sljedeće korake:
+
+**Korak 1.**
+
+Minecraft: Education Edition preuzmite s linka: https://education.minecraft.net/get-started/download.
+Da biste preuzeli ovaj paket, morate mu pristupiti putem računa koji je stvorila vaša škola. (Zamolite svog učitelja da vam pomogne).
+
+**Korak 2.**
+
+Preuzmite Minecraft: Education Edition na svoje računalo.
+
+.. image:: ../_images/_imageMinecraft/23.png
+      :align: center
+
+Povezivanje Minecraft-a i MakeCode-a
+::::::::::::::::::::::::::::::::::::
+
+**Korak 1.**
+
+Otvorite Minecraft na računalu i prijavite se u Minecraft: Education Edition koristeći svoj račun.
+
+.. image:: ../_images/_imageMinecraft/1.png
+      :align: center
+
+**Korak 2.**
+
+Nakon što se prijavite, prvo morate stvoriti svijet pritiskom na gumb Play.
+
+.. image:: ../_images/_imageMinecraft/3.png
+      :align: center
+
+Kliknite gumb ``Create New`` u dijaloškom prozoru ``Worlds``. Ovdje možete pronaći i neke već stvorene svjetske predloške. Svoj svijet možete stvoriti klikom na gumb ``Create New World``.
+
+.. image:: ../_images/_imageMinecraft/5_.png
+      :align: center
+
+**Korak 3.**
+
+Otvorit će se prozor u kojem možete prilagoditi postavke svog svijeta. Za sada ostavite sve kako vidite, osim u dijelu ``Cheats``, gdje će te uključiti ``Activate Cheats`` na ``ON``, tako da u Minecraftu možete kodirati pomoću MakeCode.
+
+.. image:: ../_images/_imageMinecraft/7_.png
+      :align: center
+
+**Korak 4.**
+
+Nakon što postavite sve mogućnosti za svoj novi svijet, koje možete promijeniti u bilo kojem trenutku, kliknite gumb ``Create``.
+
+.. image:: ../_images/_imageMinecraft/8.png
+      :align: center
+
+Time ste stvorili svoj svijet u koji sada možete smjestiti blokove.
+
+**Korak 5.**
+
+Da biste mogli programirati (kod) u Minecraft-u, morate upisati slovo **"c"**. Pojavit će se prozor **Code Builder** s popisom aplikacija koje možete koristiti za kodiranje. Odaberite **Microsoft MakeCode**:
+
+.. image:: ../_images/_imageMinecraft/12.png
+      :align: center
+
+Početni zaslon MakeCode pojavit će se u prozoru Code Builder.
+
+.. image:: ../_images/_imageMinecraft/13.png
+      :align: center
+
+Odaberite opciju ``New Project`` s popisa ``My Projects`` za stvaranje novog projekta. U slučaju da želite testirati druge programe, možete odabrati jedan od postojećih primjera s popisa Tutorials.
+
+Nakon što stvorite novi projekt u Code Builderu, otvorit će se korisničko sučelje MakeCode i možete započeti s programiranjem:
+
+.. image:: ../_images/_imageMinecraft/14.png
+      :align: center
+
+Da biste napisali kod u Minecraft: Education Edition, samo kliknite gumb |Play|.
+
+.. |Play| image:: ../_images/_imageMinecraft/15.png
+
+Minecraft korisničko sučelje
+::::::::::::::::::::::::::::
+
+.. image:: ../_images/_imageMinecraft/48.png
+      :align: center
+
+Sve u Minecraftu upravljate tipkama na tipkovnici, koje vam pomažu u premještanju i izvršavanju različitih zadataka.
+
+Popis nekih kontrola u Minecraft-u:
+
+|ESC| - Pauza
+
+|Slika1| - odabir alatne trake |Tool|
+
+Q – postavljanje objekta (blokova)
+
+W – kretanje naprijed (ako dvaput pritisnete možete trčati ili plivati ako ste u vodi)
+
+A – kretanje lijevo
+
+S – kretanje unatrag
+
+E – inventar
+
+D – kretanje desno
+
+
+|Slika2| - otvara se prozor za chat i zadavanje naredbi
+
+|Slika3| - lik može čučnuti
+
+|Slika4| - lik može skočiti
+
+
+.. |ESC| image:: ../_images/_imageMinecraft/16.png
+.. |Slika1| image:: ../_images/_imageMinecraft/17.png
+.. |Tool| image:: ../_images/_imageMinecraft/22.png
+      :width: 250px
+.. |Slika2| image:: ../_images/_imageMinecraft/19.png
+.. |Slika3| image:: ../_images/_imageMinecraft/20.png
+.. |Slika4| image:: ../_images/_imageMinecraft/21.png
+
+Miš se koristi za upravljanje kamerom, odnosno za pregled svijeta oko nas. Pritiskom na tipku ``F5`` mijenja se kut kamere.
+
+Korisničko sučelje MakeCode-a
+:::::::::::::::::::::::::::::
+
+Ovaj internetski uređivač pruža mogućnost kodiranja u JavaScriptu ili grafičkom (blokovskom) programiranju gdje su naredbe složene pomoću tehnike "drag and drop".
+
+U sredini okruženja je blok kategorija (1) u kojoj su sve naredbe (blokovi) raspoređene u grupe. S desne strane nalazi se radno područje (2) na koje možete povlačiti naredbe i stvarati programe.
+
+.. image:: ../_images/_imageMinecraft/25_.png
+      :align: center
+
+Kategorije se sastoji od različitih kategorija blokova koji imaju različite namjene i svrhe. Blokovi naredbi podijeljeni su u kategorije.
+
+.. image:: ../_images/_imageMinecraft/26.png
+      :align: center
+
+U MakeCode-u se programi sastoje od različitih povezanih blokova. Blokovi (naredbe) su podijeljeni u kategorije.
+Naziv kategorije (npr. ``Player``) upućuje korisniku koji je tip naredbe (bloka) uključen u određenu kategoriju. Svi blokovi koji pripadaju jednoj kategoriji su iste boje.
+
+Svaki blok povučemo na radnu površinu, a zatim ih povezujemo s drugim blokovima, ovisno o programu koji želimo stvoriti. Desnim klikom na blok otvara se padajući izbornik koji sadrži mogućnost koja omogućuje stvaranje duplikata (``Duplicate``), dodavanje komentara (``Add Comment``), brisanje blokova (``Delete Block``), kao i opciju s kojom možete otvoriti odjeljak informacija za dodatnu pomoć u vezi s određenim blokovima (``Help``).
+
+.. image:: ../_images/_imageMinecraft/32.png
+      :align: center
+
+Vrijeme je da iskoristimo blokove i stvorimo naš prvi program u MakeCode-u.
+
+Projekti
+::::::::
+
+U sljedećim tutorijalima predstavit ćemo nekoliko zanimljivih projekata za programiranje Minecrafta pomoću platforme MakeCode. Svi se projekti rade korak po korak, tako da ih svi mogu ponovo napraviti. Sve su procedure za izradu projekata razrađene, od kako je program stvoren do kako je testiran.
+
+
+   .. toctree::
+      :maxdepth: 2
+
+      Project Task - Hello World.rst
+      Project Task - Planting Trees.rst
+      Project Task - How many trees are there.rst
+      Project Task - Pillar.rst
+      Project Task - Hot and Cold.rst
+      Project Task - Fahrenheit.rst

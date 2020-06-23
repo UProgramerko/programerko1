@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Projektni zadatak – Alarm &#8212; Block-based programming in MakeCode</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projektni zadatak - Žica" href="Project Task - the Wire.html" />
+    <link rel="prev" title="Projektni zadatak - Semafor" href="Project Task - the Traffic Light.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'MakeCode';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = false;
+  eBookConfig.basecourse = 'MakeCode';
+  eBookConfig.runestone_version = '3.1.1';
+  eBookConfig.imagesDir = '_images/';
+  eBookConfig.staticDir = '_static/';
+  if(typeof(Sk) != "undefined")
+      Sk.imgPath = eBookConfig.imagesDir;
+</script>
+
+<div id="fb-root"></div>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <img src="_static/img/logo.png" style="width:80px; height: 80px;"> 
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 10px; margin-left: 25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Block-based programming in MakeCode</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br/>
+
+
+<div class="container col-md-12" id="continue-reading"></div>
+
+<div class="container col-md-8 col-md-offset-2" id="main-content">
+  
+  <div class="section" id="projektni-zadatak-alarm">
+<h1>Projektni zadatak – Alarm<a class="headerlink" href="#projektni-zadatak-alarm" title="Permalink to this headline">¶</a></h1>
+<p>Alarmi su uređaji koji komuniciraju s središnjom upravljačkom jedinicom putem elektroničke mreže i šalju signale o mogućim pokretima i promjenama, koje detektiraju senzori.</p>
+<p>Tipični kućni alarmni sustav sadrži sljedeće komponente:</p>
+<ul class="simple">
+<li><p>Upravljačka ploča, koja je zapravo središnja upravljačka jedinica alarmnog sustava</p></li>
+<li><p>Senzori na vratima, prozorima ili bilo komadu namještaja</p></li>
+<li><p>Senzori pokreta, unutarnji i vanjski</p></li>
+<li><p>Vrlo glasna sirena ili alarm.</p></li>
+</ul>
+<p>Princip rada vrlo je jednostavan: alarmni sustavi osiguravaju ulazne točke ili mjesta koja omogućavaju pristup kući, stanu ili radnom prostoru, senzore koji komuniciraju s glavnom upravljačkom jedinicom. Senzori se obično nalaze na vratima ili prozorima, ali i na drugim otvorima koji omogućuju pristup iznutra.</p>
+<p>Uređaj alarm mora otkriti pokrete, kao i promjene u sobnoj temperaturi i osvjetljenju. Ako se vrata otvore i poraste sobna temperatura ili se poveća intenzitet svjetla, uređaj će se oglasiti.</p>
+<p>Da biste stvorili uređaj alarm, morate:</p>
+<ul class="simple">
+<li><p>3 Micro:bita</p></li>
+<li><p>samoljepljiva traka</p></li>
+<li><p>zvučnik ili slušalice</p></li>
+<li><p>krokodilke</p></li>
+</ul>
+<p>Da biste stvorili uređaj alarm, prvo morate kreirati fizički uređaj koji se sastoji od Micro:bit-a za ulogu senzora koji detektira pokrete, promjene temperature i osvjetljenja prostorije i Micro:bit za djelovanje kada se u prostoriji pojave promjene (Micro:bit na koji je spojen zvučnik) mora se postaviti oko 10 metara od senzora.</p>
+<p>Sada kada smo izgradili uređaj alarm, moramo stvoriti programe za svaki Micro:bit.</p>
+<p>Sva tri Micro:bit-a moraju se programirati odvojeno:</p>
+<p>­1. Jedan ima ulogu otkrivanja pokreta.
+2. Drugi se koristi za otkrivanje promjena temperature ili osvjetljenja.
+3. Treći se koristi za stvaranje zvuka kada se otkriju gibanje, promjena temperature ili promjena osvjetljenja prostorije.</p>
+<p><strong>Korak 1</strong></p>
+<p>Idite na <a class="reference external" href="https://makecode.microbit.org/">https://makecode.microbit.org/</a>.</p>
+<p>Prvo ćemo programirati Micro:bit pomoću kojeg ćemo detektirati pokrete.</p>
+<p><strong>Korak 2</strong></p>
+<p>Napravite novi projekt.</p>
+<p>Sada želimo programirati otkrivanje pokreta, točnije, želimo registrirati kretanje pomoću Micro:bit-a.</p>
+<p>Kad želimo uspostaviti komunikaciju (koristiti radijsku komunikaciju) između Micro:bit-ova, svi uključeni Micro:bit-ovi moraju pripadati istoj grupi ili koristiti isti ID grupe.</p>
+<p><strong>Korak 3</strong></p>
+<p>Stvarajući ID grupu, on zapravo stvara prostor u kojem će uređaji komunicirati.</p>
+<p>Za izradu ID grupe iz kategorije <img alt="Radio" src="_images/s211.png" /> povlačimo blok <img alt="radioset" src="_images/s221.png" /> u blok <img alt="onstart" src="_images/onstart.png" /> iz kategorije <img alt="Basic" src="_images/s2.png" />. U prostor <img alt="ID" src="_images/s231.png" /> unosimo željeni broj za ID grupe. To može biti bilo koji broj. Ostavit ćemo da bude 1. Tako smo stvorili grupu s ID 1 u kojoj će komunicirati svi Micro:bit-ovi.</p>
+<p>Dio koda koji stvara komunikacijsku skupinu:</p>
+<img alt="_images/s241.png" class="align-center" src="_images/s241.png" />
+<p><strong>Korak 4</strong></p>
+<p>U blok <img alt="forever" src="_images/s1.png" />, nalazi se u kategoriji <img alt="Basic" src="_images/s2.png" />, povucite blok <img alt="if..then" src="_images/s3.png" /> iz kategorije <img alt="Logic" src="_images/s4.png" />.</p>
+<p>U dijelu za uvjet <img alt="uslov" src="_images/s51.png" /> povucite blok <img alt="uslov1" src="_images/s71.png" /> (nalazi se u kategoriji <img alt="Input" src="_images/s6.png" />).</p>
+<p>Iz padajućeg izbornika bloka <img alt="uslov1" src="_images/s71.png" />:</p>
+<img alt="_images/s81.png" class="align-center" src="_images/s81.png" />
+<p>izaberete opciju <img alt="shake" src="_images/s9.png" />. Ova opcija registrira pokrete.</p>
+<img alt="_images/s101.png" class="align-center" src="_images/s101.png" />
+<p>Na temelju postavljanja problema, kada je gibanje registrirano (ili u našem slučaju kada je uvjet ispunjen), pomoću bloka <img alt="radiosend" src="_images/s30.png" /> šaljemo neku vrijednost Micro:bit-u.</p>
+<p>U polje <img alt="broj" src="_images/s321.png" /> unosimo broj 5 (može se unijeti bilo koja vrijednost). Da bi senzor odgovorio, točnije detektirao pokrete, postavit ćemo mu da traje određeno vrijeme, neka to bude 3 sekunde (ili 3000 milisekundi). Za to ćemo koristiti blok <img alt="time" src="_images/s39.png" /> iz kategorije <img alt="Basic" src="_images/s2.png" />. U polje <img alt="vreme" src="_images/s40.png" /> unosimo 3000ms, što će biti vrijeme kada senzor odgovori na nastalu promjenu.</p>
+<img alt="_images/s48.png" class="align-center" src="_images/s48.png" />
+<p><strong>Korak 5</strong></p>
+<p>Klikom na tipku <img alt="dugme1" src="_images/s49.png" /> ili tipku <a class="reference internal" href="_images/291.png"><img alt="dugme2" src="_images/291.png" style="width: 199px;" /></a> preuzmite .hex datoteku na vaše računalo. Povlačenjem datoteke na Micro:bit, on je spreman za rad.</p>
+<p><strong>Korak 6</strong></p>
+<p>Sada je potrebno programirati Micro:bit za otkrivanje promjena u temperaturi i intenzitetu svjetlosti i te podatke poslati Micro:bit-u kako bi se oglasili.
+Kako bi Micro:bit-ovi mogli komunicirati, oni trebaju pripadati istoj ID grupi.</p>
+<p>Stvorena je grupa s ID 1 u kojoj će svi Micro:bit-ovi komunicirati:</p>
+<img alt="_images/s241.png" class="align-center" src="_images/s241.png" />
+<p>U blok <img alt="forever" src="_images/s1.png" /> povucite blok <img alt="if..then" src="_images/s3.png" /> iz kategorije <img alt="Logic" src="_images/s4.png" />. U dijelu za uvjet <img alt="uslov" src="_images/s51.png" /> moramo povući blokove koji definiraju uvjete da je temperatura veća od 30 ili da je intenzitet svjetlosti veći od 150.</p>
+<p>Uvjeti mogu biti složeni (stvoreni spajanjem jednostavnih uvjeta).</p>
+<p>U našem su slučaju jednostavni uvjeti da je temperatura veća od 30 ili da je intenzitet osvjetljenja veći od 140.</p>
+<p>Jednostavne uvjete definiramo u blokovima <img alt="poredjenje" src="_images/s53.png" />.</p>
+<p>U našem slučaju uvjete definiramo na sljedeći način:</p>
+<ul class="simple">
+<li><p>temperatura <img alt="temperatura" src="_images/s55.png" /> veća od 30: <img alt="vece30" src="_images/s56.png" />.</p></li>
+<li><p>intenzitet osvjetljenja <img alt="intenzitet" src="_images/s54.png" /> veći od 150: <img alt="vece150" src="_images/s57.png" />.</p></li>
+</ul>
+<p>Za povezivanje jednostavnih uvjeta koristite logičke operatore (I, ILI, NE) - eng (AND, OR, NOT).</p>
+<p>U MakeCode-u su logički operatori prikazani kako slijedi:</p>
+<p><img alt="and" src="_images/s50.png" /> - Povezuje dva uvjeta i kao rezultat vraća Točno ako su oba uvjeta Točna.</p>
+<p><img alt="or" src="_images/s511.png" /> - Povezuje dva uvjeta, i kao rezultat vraća Točno ako je barem jedan uvjet Točan.</p>
+<p><img alt="not" src="_images/s52.png" /> - Stavlja se ispred jednog uvjeta, i kao rezultat vraća Točno u slučaju da uvjet nije zadovoljen.</p>
+<p>Uvjet za provjeru je li došlo do promjene temperature ili intenziteta osvjetljenja definiran je blokom:</p>
+<img alt="_images/s58.png" class="align-center" src="_images/s58.png" />
+<p>Uvjetni izgled bloka:</p>
+<img alt="_images/s60.png" class="align-center" src="_images/s60.png" />
+<p>Na temelju postavljenog zadatka, kada se registrira promjena temperature ili svjetline, on šalje neku vrijednost Micro:bit-a koristeći blok <img alt="radiosend" src="_images/s30.png" />. U tekstnom polju <img alt="broj" src="_images/s321.png" /> unosimo broj 10 (može se unijeti bilo koja vrijednost). Da bi senzor odgovorio, točnije detektirao pokrete, postavit ćemo mu da traje određeno vrijeme, neka to bude 3 sekunde (ili 3000 milisekundi). Za to ćemo koristiti blok <img alt="time" src="_images/s39.png" /> iz kategorije <img alt="Basic" src="_images/s2.png" />. U polje <img alt="vreme" src="_images/s40.png" /> unosimo 3000ms, što će biti vrijeme kada senzor odgovori na nastalu promjenu.</p>
+<p>Izgled programa kada se utvrdi promjena temperature ili osvjetljenja:</p>
+<img alt="_images/s59.png" class="align-center" src="_images/s59.png" />
+<p><strong>Korak 7</strong></p>
+<p>Klikom na tipku <img alt="dugme1" src="_images/s49.png" /> ili tipku <a class="reference internal" href="_images/291.png"><img alt="dugme2" src="_images/291.png" style="width: 199px;" /></a> preuzmite .hex datoteku na vaše računalo. Povlačenjem datoteke na Micro:bit on je spreman za rad.</p>
+<p><strong>Korak 8</strong></p>
+<p>I na kraju, treći Micro:bit (oglašivač) mora se programirati tako da zvuči glasno kad prima informacije od druga dva Micro:bit-a.</p>
+<p>Stvaramo grupu s ID-om 1:</p>
+<img alt="_images/s241.png" class="align-center" src="_images/s241.png" />
+<p>Sljedeći korak je za ovaj Micro:bit primiti informacije (u našem slučaju broj) na osnovu kojih će “reagirati” izdajući zvuk. Za to ćemo iz kategorije <img alt="Radio" src="_images/s211.png" /> povući blok:</p>
+<img alt="_images/s30.png" class="align-center" src="_images/s30.png" />
+<p>U njega ćemo povući blok <img alt="if..then" src="_images/s3.png" />. U dijelu za uvjet <img alt="uslov" src="_images/s51.png" /> moramo to povući uvjet, koji provjerava prijem brojeva (5, 10) s druga dva Micro:bita.</p>
+<p>Upotrebom znaka <img alt="plus" src="_images/s151.png" />, uvodimo još jedan uvjet. U grani gdje je uvjet <img alt="uslov5" src="_images/s63.png" /> i uvjet <img alt="uslov10" src="_images/s64.png" />, povlačimo blok <img alt="melodija" src="_images/s65.png" /> (iz padajućeg izbornika biramo <code class="docutils literal notranslate"><span class="pre">ringtone</span></code>) iz kategorije <img alt="Music" src="_images/s66.png" />, kojim se reproducira zvuk.
+Pored ovog bloka dodajemo i vremenski interval od jedne sekunde.</p>
+<p>Konačni izgled koda:</p>
+<img alt="_images/s67.png" class="align-center" src="_images/s67.png" />
+<p><strong>Napomena</strong>: Da bi se audio mogao reproducirati Micro:bit mora biti spojen na zvučnike ili slušalice kako slijedi:</p>
+<img alt="_images/34.png" class="align-center" src="_images/34.png" />
+<p><strong>Korak 9</strong></p>
+<p>Klikom na tipku <img alt="dugme1" src="_images/s49.png" /> ili tipku <a class="reference internal" href="_images/291.png"><img alt="dugme2" src="_images/291.png" style="width: 199px;" /></a> preuzmite .hex datoteku na vaše računalo. Povlačenjem datoteke na Micro:bit on je spreman za rad.</p>
+</div>
+
+
+  
+      <div class="col-md-12">
+<ul class="pager">
+        <li id="relations-prev" title='Previous chapter - Projektni zadatak - Semafor' data-toggle="tooltip"><a href="Project Task - the Traffic Light.html">Previous chapter</a></li>
+    
+        <li id="relations-next" title='Next chapter - Projektni zadatak - Žica' data-toggle="tooltip"><a href="Project Task - the Wire.html">Next chapter</a></li>
+</ul>
+
+<!-- <ul class="pager"> -->
+    <!-- -->
+        <!-- <li id="relations-prev" title='Претходно поглавље - Projektni zadatak - Semafor' data-toggle="tooltip"><a href="Project Task - the Traffic Light.html">Претходно поглавље</a></li> -->
+    <!--  -->
+    <!-- -->
+        <!-- <li id="relations-next" title='Следеће поглавље - Projektni zadatak - Žica' data-toggle="tooltip"><a href="Project Task - the Wire.html">Следеће поглавље</a></li> -->
+    <!-- -->
+<!-- </ul> -->
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+  
+</div>
+<footer class="footer col-md-12">
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <p class="text-muted">
+                <span class="text-center">&copy; 2019 <a href="https://petlja.org">Petlja.org</a> 
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; vertical-align: text-bottom" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                  
+                  (Created using  <a href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>)</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

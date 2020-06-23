@@ -1,0 +1,85 @@
+Rad s blokovima iz kategorija Loops
+===================================
+
+U prirodi postoje procesi koji se povremeno ponavljaju. Kao i u prirodi, i kod programiranja je potrebno nekoliko puta izvoditi program da bi se riješili određeni zadaci. Već smo spomenuli da je ponavljanje jedne ili više naredbi (blokova) moćan koncept u programiranju. Kada se nekoliko programskih naredbi izvršavaju više puta, kažemo da program sadrži ponavljanja (ciklusa). Prije smo koristili ovaj koncept nekoliko puta. Ponavljanje naredbi vrlo je česta pojava u programiranju.  
+
+MakeCode sadrži tri vrste blokova koji sadrže druge blokove koje je potrebno ponoviti.
+
+.. |stop| image:: ../_images/_imageMicroBit/p2.png
+
+
+MakeCode has three types of blocks into which other blocks, whose execution needs to be repeated, can be inserted. Blocks can be repeated:
+
+  - određeni broj puta:
+
+  .. image:: ../_images/_imageMicroBit/p68.png
+        :align: center
+
+  Taj bi blok trebali koristiti kada unaprijed znamo točan broj ponavljanja (također se kaže i ponavljanje).
+
+  - beskonačan broj puta (više puta dok korisnik ne zaustavi program):
+
+  .. image:: ../_images/_imageMicroBit/s1.png
+        :align: center
+
+  To je jedan od najčešće korištenih blokova. Izvođenje se zaustavlja klikom na gumb za zaustavljanje programa (|stop|).
+
+  - dok se ne ispuni određeni uvjet:
+
+  .. image:: ../_images/_imageMicroBit/p68.png
+          :align: center
+
+  Taj bi blok trebali koristiti kada ne znamo koliko puta je potrebno izvršiti blokove unutar bloka za ponavljanje i zato želimo da se oni izvršavaju dok se ne ispuni određeni uvjet.
+  Blokovi ponavljanja uključuju blokove čije izvršenje treba ponoviti.
+
+Blok koji ponavlja blokove (naredbe) točno određeni broj puta može se upotrijebiti za reprodukciju tona C tri puta.
+
+Izgled koda:
+
+.. image:: ../_images/_imageMicroBit/p70.png
+      :align: center
+
+Blok za ponavljanje naredbi izvršava se beskonačan broj puta. Izvršavanje se nikada ne prekida samo po sebi. Prekidamo ga klikom na gumb za zaustavljanje programa (|stop|).
+
+Koristili smo naredbe za ponavljanje blokova neograničen broj puta u prethodnim lekcijama kada smo prikazivali animaciju kvadrata.
+
+.. mchoice:: L7Z1
+    :answer_a: Novi blokovi mogu se dodati u sam blok, tako da nema potrebe za nastavljanjem skripte.
+    :answer_b: To je greška MakeCode. Naredbeni blok beskonačnog ponavljanja trebao bi biti u mogućnosti nastaviti pisanje scenarija.
+    :answer_c: Daljnje dodavanje blokova besmisleno je jer ih nikada ne bi izvršili.    
+    :correct: a
+    :feedback_a: Odgovor je točan!
+    :feedback_b: Odgovor nije točan!
+    :feedback_c: Odgovor nije točan!
+    
+    Analizirajte raspored blokova za ponavljanje naredbi. Primjetno je da blok za beskonačno ponavljanje nema mogućnost povezivanja s drugim blokovima, niti jedan blok ne može biti dodan u njega. Zašto?
+
+Blok za ponavljanje blokova (naredbi) izvršava se sve dok se ne ispuni određeni uvjet. Blokovi unutar ovog bloka izvršavaju se na temelju testa točnosti uvjeta koji su postavljeni u bloku. Ovaj blok koristimo kada ne znamo koliko puta je potrebno za izvršavanje naredbi unutar bloka za ponavljanje i zato želimo da se izvršavaju dok se ne ispuni određeni uvjet. 
+
+.. mchoice:: L7Z2
+    :answer_a: Blok koji ponavlja naredbe ima točan broj puta.
+    :answer_b: Blok koji ponavlja naredbe beskonačan broj puta.
+    :answer_c: Blok koji ponavlja naredbe dok se ne ispuni određeni uvjet.
+    :correct: c
+    :feedback_a: Odgovor nije točan!
+    :feedback_b: Odgovor nije točan!
+    :feedback_c: Odgovor je točan!
+    
+
+    Želite stvoriti program u kojem LED na položaju (2, 2) svijetli na zaslonu dok razina osvjetljenja ne padne ispod određene vrijednosti. Koji naredbeni blok ponavljanja ćete koristiti?
+
+Pokazat ćemo uporabu ovog bloka stvaranjem programa koji svira neku melodiju sve dok je razina osvjetljenja manja od 120.
+
+.. |svetlost| image:: ../_images/_imageMicroBit/p71.png
+
+Za potrebe ovog programa definirat ćemo varijablu |svetlost|, koja će pohraniti očitanu vrijednost razine osvjetljenja. Sve dok je vrijednost osvjetljenja manja od 120, čuje se zvučni signal.
+Na slici ispod naš je prijedlog programskog koda uz komentare koji ga objašnjavaju. Programerima je korisno komentirati skripte i objasniti što određeni blokovi rade. Komentiranje olakšava drugim programerima razumijevanje i nadogradnju programa koje stvaramo. 
+Komentar dodajete klikom desne tipke miša na skriptu i odabirom **Dodaj komentar (Add comment)**. 
+ 
+
+.. image:: ../_images/_imageMicroBit/p72.png
+      :align: center
+
+Da bismo testirali program, pokrećemo ga u simulatoru klikom na gumb |play|.
+
+.. |play| image:: ../_images/_imageMicroBit/p3.png

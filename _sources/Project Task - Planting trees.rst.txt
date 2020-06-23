@@ -1,0 +1,90 @@
+Projektni zadatak - Sadnja drveća
+=================================
+
+Događaji su pojava koja su obično rezultat nečega što je korisnik učinio (klik mišem, pritiskanje tipki na tipkovnici, drag and drop, itd.). Događaj izaziva reakciju. Događaj iz informatike je radnja koju detektira (izvodi) računalo. Na primjer, klikom miša otvorimo aplikaciju, kad počne padati kiša, ljudi otvaraju kišobrane. 
+U programiranju, rukovatelj događajima je dio programa (funkcije) koji se aktivira kao rezultat nekog događaja. U MakeCode event handlers su blokovi koji obično počinju s riječi **on**:
+
+.. image:: ../_images/_imageMinecraft/31.png
+      :align: center
+
+Koristit ćemo događaj da simuliramo sadnju drveća i prikazivanje trenutnog položaja lika u svijetu Minecrafta dodavanjem naredbe **pozicija**.
+
+**Faza 1.**
+
+**Razmišljajući o zadatku:** Lik u interakciji sa svijetom kreće se oko sebe, tj. sadi se drvo. Lik sadi stabla krećući se Minecraft svijetom. Slanje poruke (putem chata) prikazuje trenutni položaj lika.
+
+**Faza 2**
+
+Otvorite ``Code Builder`` (klikom na tipku ``C``); pojavit će se prozor za uređivanje u koji možete slagati blokove.
+
+Da bismo pokrenuli chat, ili točnije, pokrenuli događaj koji će prikazati trenutnu poziciju lika, moramo povući blok |onchat| iy kategorije |Basic| na radnu površinu, a zatim utipkajte riječ **pozicija** u polje za unos ovog bloka.
+
+.. |onchat| image:: ../_images/_imageMinecraft/40.png
+              :width: 250px
+
+.. |Basic| image:: ../_images/_imageMinecraft/40_.png
+
+Unutar ovog bloka moramo dodati blokove koji će reći trenutnu poziciju. Da bismo rekli bilo koju poruku (npr. Moja trenutna pozicija:) trebamo koristiti blok |say| iz kategorije |Player|.
+
+Položaj lika (igrača) sprema se u blok |position| iz kategorije |Player|. Budući da želimo prikazati poziciju igrača u chatu, moramo koristiti blok |string| iz kategorije |Pozicija|. Umjesto opcije ``position``, umetnut ćemo blok |position| u polje:
+
+.. |say| image:: ../_images/_imageMinecraft/27.png
+.. |Player| image:: ../_images/_imageMinecraft/27_.png
+.. |position| image:: ../_images/_imageMinecraft/42_.png
+.. |string| image:: ../_images/_imageMinecraft/41_.png
+.. |Pozicija| image:: ../_images/_imageMinecraft/0.png
+
+.. image:: ../_images/_imageMinecraft/41.png
+      :align: center
+      :width: 350px
+
+Testirajmo ovaj dio koda klikom na gumb |Play|.
+
+Nakon testiranja programa, možemo vidjeti da smo dobili ono što smo željeli. Kada korisnik pritisne tipku ``T``, otvori chat i upiše poruku **pozicija**, prikazat će se trenutna pozicija igrača u svijetu.
+
+.. |Play| image:: ../_images/_imageMinecraft/15.png
+          :width: 40px
+
+.. image:: ../_images/_imageMinecraft/43.png
+          :align: center
+
+.. image:: ../_images/_imageMinecraft/42.png
+          :align: center
+
+Sada za lik moramo stvoriti događaj koji će mu omogućiti da svojim pokretom sadi drveće u Minecraft svijetu. To će se postići blokom |walk|. S padajućeg popisa ovog bloka odabrati ćemo opciju ``walk``:
+
+.. |walk| image:: ../_images/_imageMinecraft/1_.png
+
+.. image:: ../_images/_imageMinecraft/44.png
+          :align: center
+
+
+I na kraju, moramo postaviti blok |place| iz kategorije |Blocks| koji koristimo za postavljanje (u našem slučaju sadnja) drveća. S padajućeg popisa ovog bloka izabrat ćemo blok koji predstavlja drvo:
+
+.. |place| image:: ../_images/_imageMinecraft/45.png
+              :width: 350px
+
+.. |Blocks| image:: ../_images/_imageMinecraft/33_.png
+
+.. image:: ../_images/_imageMinecraft/46.png
+          :align: center
+          :width: 450px
+
+U dijelu bloka ``at`` gdje trebamo definirati položaj bloka koji želimo smjestiti u svijetu, ostavit ćemo sve tri vrijednosti da budu 0 |nula|. To će omogućiti da se drveće zasadi u istoj ravnini u kojoj se nalazi lik.
+
+Nakon svih promjena, dio koda za sadnju drveća prikazan je na donjoj slici:
+
+.. |nula| image:: ../_images/_imageMinecraft/47.png
+
+.. image:: ../_images/_imageMinecraft/49.png
+          :align: center
+
+**Korak 3**
+
+Testiranje programa.
+Klikom na gumb |Play|.
+
+.. image:: ../_images/_imageMinecraft/48.png
+          :align: center
+
+Nakon što smo testirali program, možemo zaključiti da je lik učinio što smo htjeli. Lik sadi drveće krećući se uokolo.

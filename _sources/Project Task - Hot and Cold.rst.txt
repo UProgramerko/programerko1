@@ -1,0 +1,166 @@
+Projektni zadatak - Toplo - Hladno
+==================================
+
+Kao i vi, programi u MakeCode-u mogu donositi odluke. Do sada su svi programi koje smo kreirali bili linearni programi, točnije programi u kojima se naredbe izvršavaju uzastopno, jedna za drugom do kraja programa. Za razliku od ovih programa, gdje se svaki korak, tj. svaka naredba, izvršava jednom, u algoritmima za donošenje odluke, ili točnije, uvjetnim (granskim) algoritmima, neke se naredbe izvršavaju, a neke neće, što ovisi o tome je li uvjet ispunjen ili ne.
+
+Ovaj ćemo koncept demonstrirati programiranjem igre Toplo - Hladno. Na temelju položaja lika (igrača) prikazuje se poruka koliko je udaljena od objekta smještenog negdje u svijetu. Ako je lik blizu, izgovorit će Toplo, a ako je lik daleko od objekta, izgovarat će se riječ Hladno. Ako je lik (igrač) vrlo blizu objekta, program će reći Vrelo, , a ako je jako daleko, program će reći Ledeno.
+
+
+**Faza 1.**
+
+**Razmišljajući o zadatku:** Za određivanje udaljenosti objekta do lika (igrača) trebamo izmjeriti udaljenost između njih, a na temelju tih vrijednosti dobit ćemo željenu poruku.
+
+**Faza 2**
+
+Otvorite ``Code Builder`` (klikom na tipku ``C``); pojavit će se prozor za uređivanje u koji možete slagati blokove.
+
+Na samom početku trebamo definirati objekt i smjestiti ga u svijet, što ćemo i učiniti u bloku "on start". Položaj ćemo definirati na način da koordinata X ima slučajnu vrijednost od intervala 0 do 600, a preostale dvije koordinate imaju vrijednosti Y i Z igrača.
+
+Da bismo to postigli moramo stvoriti varijable ``X, Y, Z`` (one pohranjuju koordinate položaja objekta) i ``Block`` (pohranjuje objekt). Trebamo postaviti i početne vrijednosti za varijable koje smo stvorili.
+
+U bloku |start| definirat ćemo položaj i vrstu objekta povlačenjem blokova na sljedeći način:
+
+- definiramo koordinatu x sa varijablom ``X``, koja će imati slučajnu vrijednost od intervala 0 do 600, to se postiže blokom |random| iz kategorije |Math|.
+
+- definiramo koordinatu y s varijablom ``Y``, koja će imati vrijednost y koordinate položaja igrača u svijetu. To se postiže blokom |getY| iz kategorije |Positions|, gdje ćemo staviti varijablu ``Y`` umjesto varijable **pozicija**, i blok |world| iz kategorije |Player|.
+
+- definiramo koordinatu z sa varijablom ``Z``, koja će imati vrijednost z koordinate z igračeve pozicije u svijetu. To se postiže blokom |getZ| iz kategorije |Positions|, gdje ćemo staviti varijablu ``Z`` umjesto varijable **pozicija**, i blok |world| iz kategorije |Player|.
+
+- definiramo objekt koji treba staviti negdje u svijetu. To se postiže korištenjem bloka |blok| iz kategorije |Blocks|.
+
+.. |start| image:: ../_images/_imageMinecraft/28.png
+              :width: 150px
+
+.. |random| image:: ../_images/_imageMinecraft/s15.png
+
+.. |world| image:: ../_images/_imageMinecraft/42_.png
+
+.. |Math| image:: ../_images/_imageMinecraft/s16.png
+              :width: 100px
+
+.. |getY| image:: ../_images/_imageMinecraft/s17.png
+
+.. |getZ| image:: ../_images/_imageMinecraft/s18.png
+
+.. |Player| image:: ../_images/_imageMinecraft/27_.png
+              :width: 100px
+
+.. |Positions| image:: ../_images/_imageMinecraft/0.png
+              :width: 100px
+
+.. |Blocks| image:: ../_images/_imageMinecraft/33_.png
+              :width: 100px
+
+.. |blok| image:: ../_images/_imageMinecraft/79.png
+              :width: 80px
+
+Izgled koda nakon definiranja varijabli:
+
+.. image:: ../_images/_imageMinecraft/80.png
+      :align: center
+
+Nakon što definiramo varijable i objekt, moramo povući blok koji će taj objekt fizički smjestiti negdje u svijetu.
+Za to ćemo koristiti blok |place| iz kategorije |Blocks|. Ovaj blok ima dva bloka argumenata, u prvom bloku argumenata povući ćemo varijablu |b1|, a u drugom ćemo staviti koordinate |X|, |Y| i |Z| za definiranje položaja objekta pomoću bloka |b2| iz kategorije |Positions|.
+
+.. |place| image:: ../_images/_imageMinecraft/s19.png
+
+.. |b1| image:: ../_images/_imageMinecraft/s20.png
+
+.. |X| image:: ../_images/_imageMinecraft/s21.png
+
+.. |Y| image:: ../_images/_imageMinecraft/s22.png
+
+.. |Z| image:: ../_images/_imageMinecraft/s23.png
+
+.. |b2| image:: ../_images/_imageMinecraft/82.png
+
+Izgled izmijenjenog koda:
+
+.. image:: ../_images/_imageMinecraft/81.png
+      :align: center
+
+Na ovaj način dovršili smo pozicioniranje objekta u svijetu Minecrafta. Ako želimo vidjeti njegove koordinate, možemo se poslužiti blokom |say|. Za prikazivanje ovih podataka možemo koristiti blok |join| iz potkategorije |Text| kategorije |Advanced|.
+
+.. |say| image:: ../_images/_imageMinecraft/27.png
+
+.. |join| image:: ../_images/_imageMinecraft/s26.png
+
+.. |Text| image:: ../_images/_imageMinecraft/s25.png
+            :width: 100px
+
+.. |Advanced| image:: ../_images/_imageMinecraft/s24.png
+            :width: 100px
+
+Izgled programa nakon dodavanja ovog bloka:
+
+.. image:: ../_images/_imageMinecraft/83.png
+      :align: center
+
+Naš sljedeći korak bio bi povlačenje blokova, pomoću kojih ćemo odrediti udaljenost između objekta postavljenog u svijetu i lika (igrača), u blok |chat|. To ćemo učiniti definiranjem varijabli koje će odrediti poziciju lika (igrača), tj. odrediti x, y i z koordinate znaka. Pojedinačne koordinate dobivaju se pomoću bloka |world| i blok |getof|.
+
+.. |chat| image:: ../_images/_imageMinecraft/s27.png
+.. |getof| image:: ../_images/_imageMinecraft/s28.png
+
+Stvaramo varijable **X1, Y1** i **Z1** i dajemo im vrijednosti koordinata položaja lika:
+
+.. image:: ../_images/_imageMinecraft/84.png
+      :align: center
+
+Da bismo izračunali udaljenost između lika i objekta, moramo primijeniti formulu koja se također koristi u matematici za određivanje udaljenosti u 3D između dvije točke A (x1, y1, z1) i B(x2, y2, z2):
+
+.. image:: ../_images/_imageMinecraft/s29.png
+      :align: center
+
+Kreiramo varijablu **udaljenost**, i dajemo vrijednost dobivenu formulom za izračunavanje udaljenosti između dviju točaka.
+
+U MakeCode-u su matematičke operacije smještene u kategoriju |Math|. Izradit ćemo gore spomenutu formulu jednostavnim dodavanjem odgovarajućih blokova (``+``, ``-``, i kvadrat ``**``, kao i kvadratni korijen):
+
+.. image:: ../_images/_imageMinecraft/85.png
+      :align: center
+
+Izgled nadograđenog koda:
+
+.. image:: ../_images/_imageMinecraft/86.png
+      :align: center
+
+Sada kada imamo vrijednost varijable **udaljenost**, možemo dovršiti našu igru Toplo i hladno.
+
+Na temelju udaljenosti lika (igrača) od objekta, Minecraft obavještava lika (igrača) o lokaciji objekta kratkim porukama, poput **Toplo**, ako je objekt u blizini i **Hladno**, ako je objekt daleko. Ako je lik (igrač) vrlo blizu objekta, program će reći **Vrelo**, a ako je jako daleko, program će reći **Ledeno**.
+
+Na temelju postavljanja zadatka:
+
+- Ako je udaljenost između lika (igrača) i objekta veća od 100 blokova, program bi trebao reći Ledeno.
+- Ako je udaljenost između lika (igrača) i objekta veća od 50 blokova, program bi trebao reći Hladno.
+- Ako je udaljenost između lika (igrača) i objekta veća od 25 blokova, program bi trebao reći Toplo.
+- Ako je udaljenost između lika (igrača) i objekta veća od 12 blokova, program bi trebao reći Vrelo.
+- Ako se objekt nalazi pored lika (udaljenost je 0), program treba reći Pronađeno.
+
+Za to ćemo koristiti blok |ifthen| i operateri za usporedbu (> i =) iz kategorije |Logic|. Grane dodajemo klikom na +.
+Izgled koda nakon dodavanja ovih blokova:
+
+.. image:: ../_images/_imageMinecraft/88.png
+      :align: center
+
+.. |ifthen| image:: ../_images/_imageMinecraft/s32.png
+.. |Logic| image:: ../_images/_imageMinecraft/s31.png
+
+Izgled završnog programa igre Toplo i Hladno:
+
+.. image:: ../_images/_imageMinecraft/89.png
+      :align: center
+
+**Faza 3**
+
+Testiranje programa.
+Klikom na gumb |Play|.
+
+.. |Play| image:: ../_images/_imageMinecraft/15.png
+          :width: 40px
+
+Započinjemo chat pritiskom na tipku T na tipkovnici i unosimo riječ gdje u chat, koja će biti "okidač" za početak igre.
+
+.. image:: ../_images/_imageMinecraft/90.png
+      :align: center
+
+.. image:: ../_images/_imageMinecraft/91.png
+      :align: center

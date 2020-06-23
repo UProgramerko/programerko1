@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Projektni zadatak - Toplo - Hladno &#8212; Block-based programming in MakeCode</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Projektni zadatak - Fahrenheit" href="Project Task - Fahrenheit.html" />
+    <link rel="prev" title="Projektni zadatak - Stup" href="Project Task - Pillar.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="shortcut icon" href="_static/favicon.ico" type="image/ico" />
+
+<script type="text/javascript">
+  eBookConfig = {};
+  eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+  eBookConfig.app = eBookConfig.host+'/runestone';
+  eBookConfig.ajaxURL = eBookConfig.app+'/ajax/';
+  eBookConfig.course = 'MakeCode';
+  eBookConfig.logLevel = 0;
+  eBookConfig.loginRequired = false;
+  eBookConfig.build_info = "";
+  eBookConfig.isLoggedIn = false;
+  eBookConfig.useRunestoneServices = false;
+  eBookConfig.python3 = false;
+  eBookConfig.basecourse = 'MakeCode';
+  eBookConfig.runestone_version = '3.1.1';
+  eBookConfig.imagesDir = '_images/';
+  eBookConfig.staticDir = '_static/';
+  if(typeof(Sk) != "undefined")
+      Sk.imgPath = eBookConfig.imagesDir;
+</script>
+
+<div id="fb-root"></div>
+
+
+
+  </head><body>
+
+
+<!-- Begin navbar -->
+
+<nav id="navbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     <img src="_static/img/logo.png" style="width:80px; height: 80px;"> 
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="margin-top: 10px; margin-left: 25px;">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="./">Block-based programming in MakeCode</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br/>
+
+
+<div class="container col-md-12" id="continue-reading"></div>
+
+<div class="container col-md-8 col-md-offset-2" id="main-content">
+  
+  <div class="section" id="projektni-zadatak-toplo-hladno">
+<h1>Projektni zadatak - Toplo - Hladno<a class="headerlink" href="#projektni-zadatak-toplo-hladno" title="Permalink to this headline">¶</a></h1>
+<p>Kao i vi, programi u MakeCode-u mogu donositi odluke. Do sada su svi programi koje smo kreirali bili linearni programi, točnije programi u kojima se naredbe izvršavaju uzastopno, jedna za drugom do kraja programa. Za razliku od ovih programa, gdje se svaki korak, tj. svaka naredba, izvršava jednom, u algoritmima za donošenje odluke, ili točnije, uvjetnim (granskim) algoritmima, neke se naredbe izvršavaju, a neke neće, što ovisi o tome je li uvjet ispunjen ili ne.</p>
+<p>Ovaj ćemo koncept demonstrirati programiranjem igre Toplo - Hladno. Na temelju položaja lika (igrača) prikazuje se poruka koliko je udaljena od objekta smještenog negdje u svijetu. Ako je lik blizu, izgovorit će Toplo, a ako je lik daleko od objekta, izgovarat će se riječ Hladno. Ako je lik (igrač) vrlo blizu objekta, program će reći Vrelo, , a ako je jako daleko, program će reći Ledeno.</p>
+<p><strong>Faza 1.</strong></p>
+<p><strong>Razmišljajući o zadatku:</strong> Za određivanje udaljenosti objekta do lika (igrača) trebamo izmjeriti udaljenost između njih, a na temelju tih vrijednosti dobit ćemo željenu poruku.</p>
+<p><strong>Faza 2</strong></p>
+<p>Otvorite <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Builder</span></code> (klikom na tipku <code class="docutils literal notranslate"><span class="pre">C</span></code>); pojavit će se prozor za uređivanje u koji možete slagati blokove.</p>
+<p>Na samom početku trebamo definirati objekt i smjestiti ga u svijet, što ćemo i učiniti u bloku “on start”. Položaj ćemo definirati na način da koordinata X ima slučajnu vrijednost od intervala 0 do 600, a preostale dvije koordinate imaju vrijednosti Y i Z igrača.</p>
+<p>Da bismo to postigli moramo stvoriti varijable <code class="docutils literal notranslate"><span class="pre">X,</span> <span class="pre">Y,</span> <span class="pre">Z</span></code> (one pohranjuju koordinate položaja objekta) i <code class="docutils literal notranslate"><span class="pre">Block</span></code> (pohranjuje objekt). Trebamo postaviti i početne vrijednosti za varijable koje smo stvorili.</p>
+<p>U bloku <a class="reference internal" href="_images/28.png"><img alt="start" src="_images/28.png" style="width: 150px;" /></a> definirat ćemo položaj i vrstu objekta povlačenjem blokova na sljedeći način:</p>
+<ul class="simple">
+<li><p>definiramo koordinatu x sa varijablom <code class="docutils literal notranslate"><span class="pre">X</span></code>, koja će imati slučajnu vrijednost od intervala 0 do 600, to se postiže blokom <img alt="random" src="_images/s15.png" /> iz kategorije <a class="reference internal" href="_images/s16.png"><img alt="Math" src="_images/s16.png" style="width: 100px;" /></a>.</p></li>
+<li><p>definiramo koordinatu y s varijablom <code class="docutils literal notranslate"><span class="pre">Y</span></code>, koja će imati vrijednost y koordinate položaja igrača u svijetu. To se postiže blokom <img alt="getY" src="_images/s17.png" /> iz kategorije <a class="reference internal" href="_images/01.png"><img alt="Positions" src="_images/01.png" style="width: 100px;" /></a>, gdje ćemo staviti varijablu <code class="docutils literal notranslate"><span class="pre">Y</span></code> umjesto varijable <strong>pozicija</strong>, i blok <img alt="world" src="_images/42_.png" /> iz kategorije <a class="reference internal" href="_images/27_.png"><img alt="Player" src="_images/27_.png" style="width: 100px;" /></a>.</p></li>
+<li><p>definiramo koordinatu z sa varijablom <code class="docutils literal notranslate"><span class="pre">Z</span></code>, koja će imati vrijednost z koordinate z igračeve pozicije u svijetu. To se postiže blokom <img alt="getZ" src="_images/s18.png" /> iz kategorije <a class="reference internal" href="_images/01.png"><img alt="Positions" src="_images/01.png" style="width: 100px;" /></a>, gdje ćemo staviti varijablu <code class="docutils literal notranslate"><span class="pre">Z</span></code> umjesto varijable <strong>pozicija</strong>, i blok <img alt="world" src="_images/42_.png" /> iz kategorije <a class="reference internal" href="_images/27_.png"><img alt="Player" src="_images/27_.png" style="width: 100px;" /></a>.</p></li>
+<li><p>definiramo objekt koji treba staviti negdje u svijetu. To se postiže korištenjem bloka <a class="reference internal" href="_images/79.png"><img alt="blok" src="_images/79.png" style="width: 80px;" /></a> iz kategorije <a class="reference internal" href="_images/33_.png"><img alt="Blocks" src="_images/33_.png" style="width: 100px;" /></a>.</p></li>
+</ul>
+<p>Izgled koda nakon definiranja varijabli:</p>
+<img alt="_images/80.png" class="align-center" src="_images/80.png" />
+<p>Nakon što definiramo varijable i objekt, moramo povući blok koji će taj objekt fizički smjestiti negdje u svijetu.
+Za to ćemo koristiti blok <img alt="place" src="_images/s19.png" /> iz kategorije <a class="reference internal" href="_images/33_.png"><img alt="Blocks" src="_images/33_.png" style="width: 100px;" /></a>. Ovaj blok ima dva bloka argumenata, u prvom bloku argumenata povući ćemo varijablu <img alt="b1" src="_images/s201.png" />, a u drugom ćemo staviti koordinate <img alt="X" src="_images/s21.png" />, <img alt="Y" src="_images/s22.png" /> i <img alt="Z" src="_images/s23.png" /> za definiranje položaja objekta pomoću bloka <img alt="b2" src="_images/821.png" /> iz kategorije <a class="reference internal" href="_images/01.png"><img alt="Positions" src="_images/01.png" style="width: 100px;" /></a>.</p>
+<p>Izgled izmijenjenog koda:</p>
+<img alt="_images/811.png" class="align-center" src="_images/811.png" />
+<p>Na ovaj način dovršili smo pozicioniranje objekta u svijetu Minecrafta. Ako želimo vidjeti njegove koordinate, možemo se poslužiti blokom <img alt="say" src="_images/27.png" />. Za prikazivanje ovih podataka možemo koristiti blok <img alt="join" src="_images/s26.png" /> iz potkategorije <a class="reference internal" href="_images/s25.png"><img alt="Text" src="_images/s25.png" style="width: 100px;" /></a> kategorije <a class="reference internal" href="_images/s24.png"><img alt="Advanced" src="_images/s24.png" style="width: 100px;" /></a>.</p>
+<p>Izgled programa nakon dodavanja ovog bloka:</p>
+<img alt="_images/83.png" class="align-center" src="_images/83.png" />
+<p>Naš sljedeći korak bio bi povlačenje blokova, pomoću kojih ćemo odrediti udaljenost između objekta postavljenog u svijetu i lika (igrača), u blok <img alt="chat" src="_images/s27.png" />. To ćemo učiniti definiranjem varijabli koje će odrediti poziciju lika (igrača), tj. odrediti x, y i z koordinate znaka. Pojedinačne koordinate dobivaju se pomoću bloka <img alt="world" src="_images/42_.png" /> i blok <img alt="getof" src="_images/s28.png" />.</p>
+<p>Stvaramo varijable <strong>X1, Y1</strong> i <strong>Z1</strong> i dajemo im vrijednosti koordinata položaja lika:</p>
+<img alt="_images/84.png" class="align-center" src="_images/84.png" />
+<p>Da bismo izračunali udaljenost između lika i objekta, moramo primijeniti formulu koja se također koristi u matematici za određivanje udaljenosti u 3D između dvije točke A (x1, y1, z1) i B(x2, y2, z2):</p>
+<img alt="_images/s29.png" class="align-center" src="_images/s29.png" />
+<p>Kreiramo varijablu <strong>udaljenost</strong>, i dajemo vrijednost dobivenu formulom za izračunavanje udaljenosti između dviju točaka.</p>
+<p>U MakeCode-u su matematičke operacije smještene u kategoriju <a class="reference internal" href="_images/s16.png"><img alt="Math" src="_images/s16.png" style="width: 100px;" /></a>. Izradit ćemo gore spomenutu formulu jednostavnim dodavanjem odgovarajućih blokova (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, i kvadrat <code class="docutils literal notranslate"><span class="pre">**</span></code>, kao i kvadratni korijen):</p>
+<img alt="_images/851.png" class="align-center" src="_images/851.png" />
+<p>Izgled nadograđenog koda:</p>
+<img alt="_images/861.png" class="align-center" src="_images/861.png" />
+<p>Sada kada imamo vrijednost varijable <strong>udaljenost</strong>, možemo dovršiti našu igru Toplo i hladno.</p>
+<p>Na temelju udaljenosti lika (igrača) od objekta, Minecraft obavještava lika (igrača) o lokaciji objekta kratkim porukama, poput <strong>Toplo</strong>, ako je objekt u blizini i <strong>Hladno</strong>, ako je objekt daleko. Ako je lik (igrač) vrlo blizu objekta, program će reći <strong>Vrelo</strong>, a ako je jako daleko, program će reći <strong>Ledeno</strong>.</p>
+<p>Na temelju postavljanja zadatka:</p>
+<ul class="simple">
+<li><p>Ako je udaljenost između lika (igrača) i objekta veća od 100 blokova, program bi trebao reći Ledeno.</p></li>
+<li><p>Ako je udaljenost između lika (igrača) i objekta veća od 50 blokova, program bi trebao reći Hladno.</p></li>
+<li><p>Ako je udaljenost između lika (igrača) i objekta veća od 25 blokova, program bi trebao reći Toplo.</p></li>
+<li><p>Ako je udaljenost između lika (igrača) i objekta veća od 12 blokova, program bi trebao reći Vrelo.</p></li>
+<li><p>Ako se objekt nalazi pored lika (udaljenost je 0), program treba reći Pronađeno.</p></li>
+</ul>
+<p>Za to ćemo koristiti blok <img alt="ifthen" src="_images/s32.png" /> i operateri za usporedbu (&gt; i =) iz kategorije <img alt="Logic" src="_images/s31.png" />. Grane dodajemo klikom na +.
+Izgled koda nakon dodavanja ovih blokova:</p>
+<img alt="_images/881.png" class="align-center" src="_images/881.png" />
+<p>Izgled završnog programa igre Toplo i Hladno:</p>
+<img alt="_images/89.png" class="align-center" src="_images/89.png" />
+<p><strong>Faza 3</strong></p>
+<p>Testiranje programa.
+Klikom na gumb <a class="reference internal" href="_images/151.png"><img alt="Play" src="_images/151.png" style="width: 40px;" /></a>.</p>
+<p>Započinjemo chat pritiskom na tipku T na tipkovnici i unosimo riječ gdje u chat, koja će biti “okidač” za početak igre.</p>
+<img alt="_images/90.png" class="align-center" src="_images/90.png" />
+<img alt="_images/91.png" class="align-center" src="_images/91.png" />
+</div>
+
+
+  
+      <div class="col-md-12">
+<ul class="pager">
+        <li id="relations-prev" title='Previous chapter - Projektni zadatak - Stup' data-toggle="tooltip"><a href="Project Task - Pillar.html">Previous chapter</a></li>
+    
+        <li id="relations-next" title='Next chapter - Projektni zadatak - Fahrenheit' data-toggle="tooltip"><a href="Project Task - Fahrenheit.html">Next chapter</a></li>
+</ul>
+
+<!-- <ul class="pager"> -->
+    <!-- -->
+        <!-- <li id="relations-prev" title='Претходно поглавље - Projektni zadatak - Stup' data-toggle="tooltip"><a href="Project Task - Pillar.html">Претходно поглавље</a></li> -->
+    <!--  -->
+    <!-- -->
+        <!-- <li id="relations-next" title='Следеће поглавље - Projektni zadatak - Fahrenheit' data-toggle="tooltip"><a href="Project Task - Fahrenheit.html">Следеће поглавље</a></li> -->
+    <!-- -->
+<!-- </ul> -->
+
+<script type="text/javascript">
+
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+
+</script>
+</div>
+  
+</div>
+<footer class="footer col-md-12">
+    <div class="container">
+        <div class="text-center">
+            <hr>
+            <p class="text-muted">
+                <span class="text-center">&copy; 2019 <a href="https://petlja.org">Petlja.org</a> 
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0; vertical-align: text-bottom" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+                  
+                  (Created using  <a href="https://pypi.org/project/Sphinx/">Sphinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>)</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-32029811-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+  </body>
+</html>

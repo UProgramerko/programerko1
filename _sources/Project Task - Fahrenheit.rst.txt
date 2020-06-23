@@ -1,0 +1,84 @@
+Projektni zadatak - Fahrenheit
+==============================
+
+U programiranju je ponovna upotreba dijelova programa vrlo važna jer program čini jednostavnijim i čitljivijim. Da izbjegnemo pisanje istog programa i ponavljanje istog ili sličnog programa više puta, koristimo **funkcije**. 
+
+Petlje će određeni dio koda ponoviti određeni broj puta. Funkcije će kod pokrenuti jednom, ali njihova je prednost što se njihov kod može koristiti bezbroj puta gdje god i kad god nam je potreban u programu. Jedna od glavnih uloga funkcije je raščlaniti program na dijelove koji imaju dobro definirane svrhe. Na primjer, da napravite pizzu, trebate napraviti tijesto, razvaljati tijesto, dodati nadjev, dodati ostale sastojke i na kraju ju ispeći. Ako želite programirati proizvodnju pizze u Minecraft-u, cijeli proces možete podijeliti na dijelove pomoću funkcija - jedna funkcija za svaki dio postupka izrade pizza, na primjer, izrada tijesta, pečenja itd.
+
+Možemo organizirati niz blokova jedan za drugim i na taj način stvoriti funkciju koju možemo nazvati svaki put kad trebamo izvršiti određenu aktivnost unutar programa. 
+
+Koristit ćemo jednostavan primjer pretvaranja temperature izražene u stupnjevima Celzijusa u stupnjeve Farenhita kako bismo pokazali uporabu funkcija.
+
+**Faza 1.**
+
+**Razmišljajući o zadatku:** Korisnik unosi vrijednost u stupnjevima Celzijusa, a program ga pretvara u stupnjeve Farenheita. Koristit ćemo formulu °F = °C × 1.8 + 32.
+
+**Faza 2**
+
+Otvorite ``Code Builder`` (klikom na tipku ``C``); pojavit će se prozor za uređivanje u koji možete slagati blokove.
+
+Za pretvaranje temperature iz Celzujusa u Farenhait koristit ćemo blokove koje ćemo smjestiti u funkciju. 
+
+Možete stvoriti funkciju otvaranjem potkategorije **Function** (1) iz kategorije |Advanced|, i klikom na gumb **Make a Function** (2), zatim u polje za unos upišite naziv funkcije koju želite stvoriti (3), u našem slučaju **Pretvaranje**, klikom na gumb **Number** (4) možemo dodati parametar, što će biti broj, ili točnije vrijednost temperature u stupnjevima Celzija, koju korisnik želi pretvoriti. Kada kliknete gumb **Done** (5), stvorit će se funkcija (6):
+
+.. image:: ../_images/_imageMinecraft/95.png
+      :align: center
+
+.. |Advanced| image:: ../_images/_imageMinecraft/s24.png
+        :width: 100px
+
+Moramo stvoriti dvije varijable ``TC`` i ``TF``, koje će pohraniti vrijednosti temperatura u Celzijusu (onu koju je korisnik unio pomoću tipkovnice u bloku |chat|) i u Fahrenheitu (izračunata formulom).
+
+U blok |Function| povući ćemo sljedeće blokove:
+
+- blok |set|, koju koristimo za definiranje vrijednosti varijable ``TF``, pomiću formule ``°F = °C × 1.8 + 32``, koju ćemo izraditi pomoću blokova iz kategorije |Math|,
+
+- blok |show|, koji će prikazati temperaturu u stupnjevima Fahrenheita.
+
+.. |Function| image:: ../_images/_imageMinecraft/s33.png
+
+.. |set| image:: ../_images/_imageMinecraft/s34.png
+
+.. |chat| image:: ../_images/_imageMinecraft/s27.png
+
+.. |Math| image:: ../_images/_imageMinecraft/s16.png
+            :width: 100px
+.. |show| image:: ../_images/_imageMinecraft/s36.png
+
+Sada imamo funkciju **Pretvaranje**:
+
+.. image:: ../_images/_imageMinecraft/96.png
+      :align: center
+
+Da bismo pretvorili temperaturu iz Celzija u Fahrenheit, moramo pozvati gornju funkciju u blok |chat|.
+
+U prethodno spomenuti blok moramo povući sljedeće blokove:
+
+- blok koji definira vrijednost varijable ``TC`` kao vrijednost koju je korisnik unio u chat,
+
+- blok koji poziva funkciju |call| iz kategorije |Function|.
+
+.. |call| image:: ../_images/_imageMinecraft/s35.png
+
+Izgled koda:
+
+.. image:: ../_images/_imageMinecraft/97.png
+      :align: center
+
+Izgled programa koji pretvara temperaturu u stupnjevima Celzijusa u Fahrenheit:
+
+.. image:: ../_images/_imageMinecraft/98.png
+      :align: center
+
+**Faza 3**
+
+Testiranje programa.
+Kliknite na gumb |Play|.
+
+.. |Play| image:: ../_images/_imageMinecraft/15.png
+          :width: 40px
+
+Otvaramo chat pritiskom na tipku T na tipkovnici i unosimo riječ **Pretvori** a nakon nje željenu vrijednost. To će biti naš „okidač“ pokretanja programa, koji će izvršiti pretvorbu. 
+
+.. image:: ../_images/_imageMinecraft/99.png
+      :align: center

@@ -1,0 +1,84 @@
+Rad s blokovima iz kategorije Radio
+===================================
+
+U ovom ćemo se dijelu upoznati s blokovima iz kategorije |Radio|, odnosno blokovi koji se koriste za povezivanje i komunikaciju između dva ili više Micro:bitnih uređaja. Kako u ovom slučaju ne koristimo Micro:bitove, simulator će pokazati dva Micro:bita. 
+U simulatoru će sav stvoreni kod raditi na oba virtualna Micro:bita.
+
+.. |Radio| image:: ../_images/_imageMicroBit/s21.png
+
+Napravite program koji, kada pritisnete tipku A, šalje slučajni broj iz intervala od 0 do 100. Kad se primi ta informacija, na sredini ekrana svijetli lampica, tvoreći kvadrat 3x3 ako je primljeni broj ujednačen, inače se prikazuje vrijednost tog broja.
+
+Stvarajući ID grupu, on zapravo stvara prostor u kojem će uređaji komunicirati.
+
+Za izradu ID grupe iz kategorije |Radio| povučemo u blok |onstart| blok |radioset|. U prostoru za unos broja ili teksta. Unosimo željeni broj za ID grupe, a to može biti bilo koji broj. Ostavit ćemo ga da bude 1. Stoga smo stvorili grupu s ID 1 u kojoj će komunicirati oba Micro:bita.
+
+.. |onstart| image:: ../_images/_imageMicroBit/s20.png
+
+.. |radioset| image:: ../_images/_imageMicroBit/s22.png
+
+.. image:: ../_images/_imageMicroBit/s24.png
+      :align: center
+
+NAPOMENA: Kada koristite radio blokove iz kategorije ``Radio`` simulator će prikazati dva Micro:bita.
+
+Varijabla ``Brojač`` pohranjuje vrijednost dobivenu pomoću bloka |pickrandom|, točnije varijable ``Brojač`` prima jednu od slučajnih vrijednosti u intervalu od 0 do 100.
+Kada pritisnete tipku A, Micro:bit šalje vrijednost varijable ``Brojač`` koristeći blok |send| iz kategorije |Radio|.
+
+Izgled bloka:
+
+.. |pickrandom| image:: ../_images/_imageMicroBit/p49.png
+.. |send| image:: ../_images/_imageMicroBit/s30.png
+
+.. image:: ../_images/_imageMicroBit/p73.png
+      :align: center
+
+Kada je podatak poslan (u našem slučaju Brojač) taj podatak mora biti primljen. Na osnovu tog podatka utvrđuje se izvršavanje programa (biti će prikazan kvadrat ako je taj broj paran, u suprotnom će biti prikazana njegova vrijednost). Za to ćemo iz kategorije |Radio| povući blok:
+
+.. image:: ../_images/_imageMicroBit/p73.png
+      :align: center
+
+U ovaj blok povlačimo blok koji definira varijablu ``Ostatak``, koja pohranjuje vrijednost u cjelobrojnom dijeljenju ``Brojač`` sa 2:
+
+.. image:: ../_images/_imageMicroBit/p64.png
+      :align: center
+
+Zatim, slijedi blok |ifthen|. U odjeljku za |uslov| provjeravamo nema li ostatka u cjelobrojnom dijeljenju Brojača sa 2. Ako je to ispravno, prikazat će se kvadrat 3x3. U suprotnom, ako uvjet nije ispunjen, točnije, u podjeli je zaostatak koji nije jednak nuli, prikazat će se vrijednost``Brojača``:
+
+.. image:: ../_images/_imageMicroBit/p75.png
+      :align: center
+
+.. |ifthen| image:: ../_images/_imageMicroBit/s3.png
+.. |uslov| image:: ../_images/_imageMicroBit/s5.png
+
+Konačni izgled koda:
+
+.. image:: ../_images/_imageMicroBit/p76.png
+      :align: center
+
+Link za kod: https://makecode.microbit.org/_f31EfHcv6Kpy
+
+Da bismo testirali program, pokrećemo ga u simulatoru klikom na gumb |play|.
+
+.. |play| image:: ../_images/_imageMicroBit/p3.png
+
+.. mchoice:: L8Z1
+    :answer_a: Kad se podaci zaprime, ništa se neće prikazati.
+    :answer_b: Nakon primanja podataka uključit će se LED na položaju (2, 2).
+    :answer_c: Nakon primanja informacija pojavit će se poruka "Pozdrav".
+    :feedback_a: Odgovor je točan!
+    :feedback_b: Odgovor nije točan!
+    :feedback_c: Odgovor nije točan!
+    :correct: a
+
+    Pažljivo proučite blokove.
+
+    .. image:: ../_images/_imageMicroBit/p77.png
+          :align: center
+
+    Izvršavanjem gornjih blokova što će se prikazati?
+
+**Zadatak.** Blokove rasporedite tako da simuliraju rad Telegrafa, a točnije slanjem signala (broja) da LED nasumično upali u odabrane položaje. 
+
+**Mala pomoć:** Vrijednosti x i y koordinata nalaze se u rasponu od 0 do 4.
+
+Usporedite svoje rješenje s jednim od mogućih rješenja: https://makecode.microbit.org/_JgFC5vRpudkq

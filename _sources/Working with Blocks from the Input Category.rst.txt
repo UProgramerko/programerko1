@@ -1,0 +1,114 @@
+Rad s blokovima iz kategorije Input
+===================================
+
+Računalo obrađuje podatke koje dobiva od ulaza (od korisnika (pritiskanje gumba, ...) ili okoline (vrijednosti dobivene očitanjem senzora)). U MakeCode-u postoji kategorija blokova koji omogućuju rad ulaznih podataka, točnije kategorija bloka koji programu dopuštaju da "izvršava određene radnje" na temelju informacija koje dobiva od korisnika ili okoline.
+
+Kategorija |input| sadrži blokove (naredbe), koji prihvaćaju podatke, dobivene od korisnika (klikom na gumb) ili okoliša (čitanje senzora).
+
+.. image:: ../_images/_imageMicroBit/p8.png
+      :align: center
+
+Ulazni podaci mogu se dobiti pritiskom na tipke ``A``, ``B`` ili ``A+B``, kao i čitanjem vrijednosti senzora za svjetlost, temperaturu, akcelerometar.
+
+.. |input| image:: ../_images/_imageMicroBit/s26.png
+
+Želimo napisati program koji prikazuje temperaturu (u Celzijusu) pritiskom na tipku ``A``.
+
+.. |onstart| image:: ../_images/_imageMicroBit/s20.png
+
+.. |forever| image:: ../_images/_imageMicroBit/s1.png
+
+.. mchoice:: L2Z1
+    :answer_a: jednom.
+    :answer_b: beskonačan broj puta.
+    :feedback_a: Bravo! Blok onstart jedan je od osnovnih blokova, a blokovi unutar njega izvršavaju se samo jednom dok program ne bude dovršen.
+    :feedback_b: Forever je blok unutar kojeg će se naredbe beskonačno izvršavati. Izvršavanje se nikada ne prekida samo po sebi. Završava se klikom na gumb za zaustavljanje programa (gumb |stop|).
+    :correct: a
+
+    Koliko puta će se izvršavati blok smješten u |onstart|?
+
+
+Kao što smo vidjeli u primjerima u prvoj lekciji, pokretanje i izvršavanje programa ovisilo je o bloku, |onstart| ili |forever|.
+
+Da biste omogućili unos podataka, odnosno, za pokretanje ili izvršavanje programa odaberemo blok koristimo pritisak na tipku ``A``, iz kategorije |input| odaberemo blok: |onbutton| i iz padajuće liste odaberemo dugme A.
+
+.. |onbutton| image:: ../_images/_imageMicroBit/p9.png
+
+Blok |onbutton| pokreće program i svi blokovi unutar njega se izvršavaju.
+
+Povlačimo blok u radnu površinu ``on button ... pressed`` a unutar njega povlačimo blok kojim želimo prikazati vrijednost temperature.
+
+Za prikazivanje temperature koristimo blok |shownumber| iz kategorije |Basic|.
+
+.. |shownumber| image:: ../_images/_imageMicroBit/15.png
+
+.. |Basic| image:: ../_images/_imageMicroBit/s2.png
+
+Nakon spajanja ovih blokova iz Input kategorije odabiremo blok |temperatura| koju povlačimo u naredbeno polje za prikaz broja navedeno za broj. Blok |temperatura| pohranjuje očitanu vrijednost senzora za temperaturu, prikazanu u Celzijusu.
+
+.. |temperatura| image:: ../_images/_imageMicroBit/s55.png
+
+Završni izgled programa:
+
+.. image:: ../_images/_imageMicroBit/p10.png
+      :align: center
+
+Koristit ćemo simulator za testiranje programa. Jednim klikom na tipku |play| program se izvršava.
+
+.. |play| image:: ../_images/_imageMicroBit/p3.png
+
+
+.. mchoice:: L2Z2
+    :answer_a: Kada pritisnete A, prikazat će se nova vrijednost osvjetljenja.
+    :answer_b: Kada pritisnete tipku B, prikazat će se nova vrijednost osvjetljenja.
+    :answer_c: Kada se istovremeno pritisnu A i B, prikazat će se nova vrijednost osvjetljenja.
+    :feedback_a: Bravo! Pritiskom na A prikazat će se vrijednost razine osvjetljenja.
+    :feedback_b: Nije točan odgovor! Pritiskom na A prikazat će se vrijednost razine osvjetljenja.
+    :feedback_c: Nije točan odgovor! Pritiskom na A prikazat će se vrijednost razine osvjetljenja.
+    :correct: a
+
+    Što će biti okidač za prikaz razine svjetline:
+
+    .. image:: ../_images/_imageMicroBit/p11.png
+          :align: center
+
+    Mala pomoć: Blok |level| pohranjuje očitanu vrijednost senzora svjetla na zaslonu (LED-ovi igraju ulogu senzora svjetlosti).
+
+.. |level| image:: ../_images/_imageMicroBit/s54.png
+
+.. mchoice:: L2Z3
+    :answer_a: Blok A.
+    :answer_b: Blok B.
+    :answer_c: Blok C.
+    :answer_d: Blok D.
+    :feedback_a: Odgovor nije točan!
+    :feedback_b: Odgovor nije točan!
+    :feedback_c: Odgovor je točan.
+    :feedback_d: Odgovor nije točan!
+    :correct: c
+
+    Pogledajte pažljivo izgled blokova. Koji je od blokova program koji će nacrtati cvijet kada se napravi neki pokret (shake)?
+
+    .. image:: ../_images/_imageMicroBit/p16.png
+          :align: center
+
+.. mchoice:: L2Z4
+    :answer_a: Kad pritisnete A, prikazuje se smjer.
+    :answer_b: Kad pritisnete tipku B, prikazuje se smjer.
+    :answer_c: Kada se A i B istovremeno pritisnu, prikazat će se smjer.
+    :feedback_a: Odgovor nije točan!
+    :feedback_b: Odgovor nije točan!
+    :feedback_c: Odgovor je točan.
+    :correct: c
+
+    Pogledajte pažljivo izgled bloka. Što će biti okidač (ulaz) za prikaz smjera položaja uređaja:
+
+    .. image:: ../_images/_imageMicroBit/p17.png
+          :align: center
+
+**Zadatak.** Pritisnite A za programiranje osmjeha (pomoću |showleds|) pritisnite B za prikaz vašeg imena i pritisnite A i B za prikaz godina.
+
+Usporedite svoje rješenje s našim: https://makecode.microbit.org/_86uV0j7mt0hU
+
+.. |showleds| image:: ../_images/_imageMicroBit/s12.png
+    :width: 100px

@@ -1,0 +1,173 @@
+Micro:bit – Osnovne značajke i komponente
+=========================================
+
+Prije nego što započnemo priču o Micro:bit programiranju kroz MakeCode, upoznajmo se s osnovnim komponentama i značajkama Micro:bit-a i radnim okruženjem.
+
+Micro:bit – Osnovne značajke i komponente
+:::::::::::::::::::::::::::::::::::::::::
+
+Micro:bit je prijenosno računalo koje se može programirati s 32-bitnim ARM Cortex-M0 procesorom koji radi na 16MHz i ima samo 16KB RAM memorije, senzore i zaslon koji čine 25 LED-ica. Ima priključke, pet ulaza i izlaza (I/O) koji se koriste za spajanje Micro:bit-a na druge uređaje ili senzore, ima Bluetooth podršku, napajaju se dvije AA baterije. 
+I što je najvažnije, ima sposobnost programiranja.
+
+.. image:: ../_images/_imageMicroBit/0.png
+      :align: center
+
+Micro:bit se sastoji od sljedećih fizičkih komponenti:­
+
+- 25 LED dioda koje se mogu pojedinačno programirati
+
+- 2 tipke s oznakama A i B koje se mogu programirati
+
+- pinovi
+
+- senzori za temperaturu i svjetlost
+
+- senzori pokreta (akcelerometar i kompas)
+
+- bežična komunikacija putem radija i bluethoot-a
+
+- USB priključak
+
+- gumb za resetiranje
+
+**Led diode**
+
+.. image:: ../_images/_imageMicroBit/60.png
+      :width: 192px
+      :align: center
+
+
+LED diode (Light Emitting Diode) su diode koje emitiraju svjetlost. Micro:bit ima 25 LED-ica (smještenih u mreži 5x5), koje se mogu individualno programirati i koje, ovisno o programu, mogu prikazati određeni tekst, brojeve, brojke.
+
+**Tipkw A i B**
+
+.. image:: ../_images/_imageMicroBit/66.png
+      :align: center
+
+
+Na prednjoj strani Micro:bit-a postoje dvije tipke (označene A i B). Pritiskom na svaku tipku pojedinačno ili istovremeno pokrećete program na uređaju.
+
+**Pinovi**
+
+.. image:: ../_images/_imageMicroBit/67.png
+      :align: center
+
+
+Koriste se za povezivanje s drugim uređajima ili senzorima.
+
+**Senzori za svjetlo**
+
+.. image:: ../_images/_imageMicroBit/63.png
+      :align: center
+
+
+LED diode nalaze se na prednjoj strani Micro:bit-a. U ovom slučaju igraju ulogu ulaznog uređaja. LED ekran djeluje poput normalnog senzora svjetla koji otkriva intenzitet svjetla u okolini.
+
+**Senzor za temperaturu**
+
+.. image:: ../_images/_imageMicroBit/65.png
+      :width: 192px
+      :align: center
+
+
+Senzor temperature omogućava Micro:bit-u da otkrije trenutnu temperaturu okoline, u stupnjevima Celzijusa.
+
+**Akcelerometar**
+
+.. image:: ../_images/_imageMicroBit/68.png
+      :align: center
+
+
+Akcelerometar - je komponenta koja registrira pokrete, tj. promjena brzine i položaja, odnosno moguće je izmjeriti brzinu kretanja. S ovom komponentom moguće je registrirati kada se Micro:bit premjesti. Također je moguće otkriti i druge aktivnosti, poput tresenja, naginjanja ili slobodnog pada.
+
+**Kompas**
+
+.. image:: ../_images/_imageMicroBit/68.png
+      :align: center
+
+
+Kompas otkriva Zemljino magnetsko polje, što nam daje mogućnost određivanja smjera u kojem je Micro:bit okrenut. Kompas treba kalibrirati prije upotrebe. "Kalibracijom" kompasa daju se precizni rezultati očitanja smjera. Kada započne kalibracija, Micro:bit će na zaslonu prikazati upute - "Nacrtaj krug" ili "Nagib za ispunjavanje zaslona". Za kalibraciju kompasa slijedite dane upute i nagnite Micro:bit u krug tako da pomaknemo točku u sredini zaslona dok se ne prikaže obris kruga ili cijeli zaslon ne ispuni točkicama.
+
+**Radio i Bluetooth**
+
+.. image:: ../_images/_imageMicroBit/65_.png
+      :width: 192px
+      :align: center
+
+
+Radio komponenta omogućuje bežičnu komunikaciju između dva ili više Micro:bita. Radio možemo koristiti za slanje poruka na druge Micro:bit-ove, za stvaranje igara ili kvizova za više igrača i slično. BLE (Bluetooth Low Energy) antena omogućuje Micro:bit-u da šalje i prima Bluetooth signale, odnosno da bežično komunicira s računalima, mobilnim telefonima i tabletima.
+
+**USB okruženje**
+
+.. image:: ../_images/_imageMicroBit/69.png
+      :align: center
+
+
+USB priključak omogućuje nam da Micro:bit povežemo s računalom putem mikro USB kabela, koji će napuniti uređaj i omogućiti nam preuzimanje programskih kodova.
+
+Radno okruženje
+:::::::::::::::
+
+Radnu površinu pokrećemo putem preglednika pokretanjem stranice https://makecode.microbit.org.
+
+Klikom na gumb pokrećemo novi projekt – New project        |newproject|.
+
+.. |newproject| image:: ../_images/_imageMicroBit/p1.png
+    :width: 90px
+
+
+Ovaj online editor daje mogućnost programiranja u JavaScript-u ili u grafičkom (blokovskom) programiranju gde se naredbe slažu tehnikom „drag and drop“. Mi ćemo se baviti blokovskim programiranjem. 
+
+Web okruženje micro:bita u Makecode editoru s lijeve strane sadrži simulator (1), koji ga izvršava odmah nakon pisanja programa, tako da vizualizacije mogu lako otkriti pogreške koje se mogu pojaviti u programu. U sredini okoline je izbornik (2) koji sadrži grupirane naredbe. S desne strane je radna površina (3) na kojoj se crtaju naredbe i sastavljaju programi. 
+
+.. image:: ../_images/_imageMicroBit/2.png
+      :align: center
+
+Kada se pokrene novi projekt, na radnoj površini MakeCode nalaze se dva bloka: on start i forever. Blok |onstart| je jedan od osnovnih blokova, a blokovi unutar njega izvršavaju se samo jednom dok program ne bude dovršen. Dok je blok |forever| unutar kojih će se naredbe izvršavati. beskonačan broj puta. Izvršavanje se nikada ne prekida samo po sebi. Završava se klikom na tipku za napuštanje programa (Stop tipka |stop|). 
+U MakeCode-u se programi sastoje od različitih i međusobno povezanih blokova. Blokovi (naredbe) su podijeljeni u kategorije za različite svrhe. 
+
+.. |stop| image:: ../_images/_imageMicroBit/p2.png
+.. |onstart| image:: ../_images/_imageMicroBit/s20.png
+.. |forever| image:: ../_images/_imageMicroBit/s1.png
+
+.. image:: ../_images/_imageMicroBit/3_.png
+      :align: center
+
+Naziv kategorije (npr. ``Music``) usmjerava korisnika na vrste naredbi (blokova) koje se mogu naći u toj kategoriji. Svi blokovi jedne kategorije su iste boje.
+Svaki blok povučemo na radnu površinu, a zatim ga nadograđuju ovisno o programu koji se kreira.
+
+Desnim klikom na blok daje se padajuća kategorija koja sadrži opcije za stvaranje duplikata (``Duplicate``), dodavanje komentara (``Add Comment``), brisanje bloka (``Delete Block``), i otvaranje opcija za dodatne informacije o pomoći pojedinačni blokovi (``Help``).
+
+.. image:: ../_images/_imageMicroBit/4_.png
+      :align: center
+
+
+Prije nego što počnemo stvarati zanimljive projekte pomoću Micro:bit-a, pokušat ćemo se upoznati s osnovama programiranja u radnom okruženju MakeCode.
+
+.. toctree::
+   :maxdepth: 2
+
+   Blocks from the Basic Category.rst
+   Working with Blocks from the Input Category.rst
+   Blocks from the Music Category.rst
+   Working with Blocks from the Led Category.rst
+   Working with Blocks from the Math and Variables Categories.rst
+   Working with Blocks from the Logic Category.rst
+   Working with Blocks from the Loops Category.rst
+   Working with Blocks from the Radio Category.rst
+
+
+Projekti
+::::::::
+
+U sljedećim tutorijalima predstavit ćemo nekoliko zanimljivih projekata vezanih uz programiranje Micro:bit-a na MakeCode platformi.
+Svi se projekti rade korak po korak, tako da ih svi mogu iznova raditi. Opisani su svi postupci za izradu projekta, od načina izrade uređaja do dizajna programa i njegovog testiranja.
+
+.. toctree::
+   :maxdepth: 2
+   
+   Project Task - the Bracelet.rst
+   Project Task - the Singing Fruits.rst
+   Project Task - the Traffic Light.rst
+   Project Task - the House Alarm.rst
+   Project Task - the Wire.rst

@@ -1,0 +1,66 @@
+Projektni zadatak - Kretanje robota
+===================================
+
+Svoju avanturu započinjemo jednostavnim programom koji robota pomiče desno 2 sekunde, a zatim se pomiče unatrag za 2 sekunde.
+
+Prvi korak u našem primjeru je pokretanje motora. Treba odabrati |tankmotor| blok iz kategorije |Motors|, i dodajte ga na radnu površinu u blok |start|. Na početku treba odrediti portove na koje su priključeni motori. Ranije smo rekli da EV3 ima 4 porta za motore - A, B, C i D.
+
+.. |tankmotor| image:: ../_images/_imageEV3/6.png
+.. |Motors| image:: ../_images/_imageEV3/5.png
+.. |start| image:: ../_images/_imageEV3/8.png
+
+U našem slučaju pogonski motori su priključeni na B i C port, brzina 50%. Kako se na osnovu postavke zadatka robot kreće ravno 2 sekunde, na bloku |tankmotor|, pritiskom na znak plus otvara se mogućnost izbora načina pokretanja robota.
+
+U našem slučaju potrebno je odabrati opciju "seconds".
+
+.. image:: ../_images/_imageEV3/7.png
+      :align: center
+
+Nakon toga moramo podesiti dužinu kretanja robota upisivanjem vrijednosti 2 u prostor za unos teksta |broj|. Robot će se kretati 2 sekunde.
+
+.. |broj| image:: ../_images/_imageEV3/10.png
+
+Izgled koda za kretanje robota 2 sekunde:
+
+.. image:: ../_images/_imageEV3/9.png
+      :align: center
+
+Na kraju, da bi se robot kretao unatrag, potrebno je da vrijednosti brzine motora bude negativne. Postavili smo ovu vrijednost na -50.
+
+Izgled konačnog koda:
+
+.. image:: ../_images/_imageEV3/11.png
+      :align: center
+
+Priključite EV3 na računalo pomoću USB kabla i kliknite na tipku za preuzimanje na dnu ekrana. Slijedite upute za spremanje programa na EV3 Brick.
+
+Kliknite na tipku |dugme1| preuzmite .uf2 datoteku na vaše računalo. Povlačenjem datoteke na EV3 on je spreman za rad.
+
+.. |dugme1| image:: ../_images/_imageEV3/download.png
+      :width: 199px
+
+Kako bismo demonstrirali kretanje robota, dajemo još jedan jednostavan primjer kako programirati robota da se kreće od početne linije do cilja i ponovno vrati na početak. Startna udaljenost do cilja iznosi 50cm.
+
+.. image:: ../_images/_imageEV3/11_.png
+      :align: center
+
+Na temelju zadatka, robot se pomiče ravno 5 rotacija (360 stupnjeva = 1 rotacija), tako da je potreban blok |tankmotor| iz kategorije |Motors|, i privucite ga na radnu površinu u blok |start|.
+
+U našem slučaju pogonski motori su spojeni na B i C priključke, brzinom od 50%. Budući da se 5 rotacija temelji na postavci zadataka robota, pritiskom na znak plus otvara se mogućnost izbora načina pokretanja robota. U našem slučaju potrebno je odabrati opciju "rotacije".
+Zatim prilagodite duljinu pokreta robota unosom vrijednosti 5 u prostor za unos teksta. Time će se robot kretati 5 rotacija.
+
+Dio koda za kretanje robota 5 rotacija:
+
+.. image:: ../_images/_imageEV3/12.png
+      :align: center
+
+Blok ćemo koristiti za zakretanje robota. Okretanje se definira kao promjena brzine jednog motora u odnosu na drugi motor, točnije, ako želimo brzo ili oštro skrenuti udesno, lijevi motor mora raditi najmanje dvostruko brže nego desni motor. Da bi robot izvršio bilo koji zaokret, ulazi se u polje ``turn ratio``. Ako želimo da se robot okrene ulijevo, koriste se negativne vrijednosti, a ako želimo desno, unose se pozitivne vrijednosti. Za povratak koristimo isti blok kao i kad stignemo do odredišta. Možemo koristiti blok za zaustavljanje svih motora |blok1|.
+
+.. |blok1| image:: ../_images/_imageEV3/14.png
+
+Izgled koda kretanja robota od početka do kraja:
+
+.. image:: ../_images/_imageEV3/15.png
+      :align: center
+
+Klikom na tipku |dugme1| preuzmite .uf2 datoteku na vaše računalo. Povlačenjem datoteke na EV3 on je spreman za rad.

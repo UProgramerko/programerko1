@@ -1,0 +1,107 @@
+Projektni zadatak - Koliko ima stabala?
+=======================================
+
+Računalu su potrebni spremnici za spremanje brojeva, tekstova i drugih informacija, tako da na temelju tih podataka može donositi neke odluke. Na primjer, ako želimo napraviti vremensku prognozu, potrebne su nam varijable poput temperature, doba dana, dana u tjednu, količine oborina, itd.
+
+Varijabla se može shvatiti kao prostor u memoriji računala, nešto poput okvira u koji, tijekom izvođenja programa, možemo pohraniti neke privremene vrijednosti. (npr. Broj stabala zasađenih u svijetu).
+
+Svaka varijabla pohranjuje određenu vrstu informacija. Prvi put kada ga koristimo trebamo definirati njegovu vrstu (broj, niz (tekst - niz alfanumeričkih znakova), logički (true, false)). Od tog trenutka do kraja programa u tu varijablu možemo pohraniti samo određene vrste podataka.
+
+Varijable imaju imena. Kad želimo koristiti vrijednost varijable, dovoljno je upotrijebiti njeno ime.
+
+**Važno**: Odabir pravog imena varijable olakšava razumijevanje programa koje smo kreirali. Na primjer, ako želimo pohraniti broj života igrača u igri, možemo imenovati varijablu number_lives, koja bi bila bolja od živ ili broj. Imena varijabli sadrže slova, brojeve i posebni znak _(donja crta), i uvijek moraju započeti slovom.
+
+U prethodnom primjeru vidjeli smo da je položaj objekta (lik, svijet) posebna vrsta varijable koja sadrži tri broja koja opisuju određeno mjesto u trodimenzionalnom prostoru. Ti se brojevi nazivaju X, Y i Z koordinate.
+
+Koristit ćemo primjer programa koji broji broj stabala koje je lik zasadio dok se kreće po svijetu, kako bismo pokazali kako možemo stvarati i koristiti varijable.
+
+**Faza 1.**
+
+**Razmišljajući o zadatku:** Drveće se sadi krećući se svijetom. Svaki put kada se zasadi stablo, broj stabala na svijetu raste.
+
+**Faza 2**
+
+Otvorite  ``Code Builder`` (pritiskom na tipku ``C``); pojavit će se prozor za uređivanje u koji možete slagati blokove.
+
+Za brojanje zasađenih stabala nadogradit ćemo program iz projekta Sadnja drveća:
+
+.. image:: ../_images/_imageMinecraft/55.png
+          :align: center
+
+Moramo stvoriti varijablu **Brojač**, koji će pohraniti broj zasađenih stabala.
+
+Varijabla se kreira na sljedeći način, u kategoriji ``Variables`` (1), kliknemo na gumb ``Make a variable`` (2) i upišite ime te varijable u polje (3), u našem slučaju **Brojač** . Klikom na gumb OK (4), stvorili ste varijablu (5):
+
+.. image:: ../_images/_imageMinecraft/53.png
+          :align: center
+
+Početna vrijednost varijable **Brojač** je 0.
+
+Postavljanje početne vrijednosti (resetiranje na početnu vrijednost) definira se blokom |start|. To znači da će Minecraft svaki put kada se pokrene program postaviti vrijednost brojača na 0 i brojanje stabala može započeti.
+
+.. |start| image:: ../_images/_imageMinecraft/28.png
+          :width: 150px
+
+.. |Loops| image:: ../_images/_imageMinecraft/2_.png
+          :width: 100px
+
+.. |Variables| image:: ../_images/_imageMinecraft/3_.png
+          :width: 100px
+
+.. |set| image:: ../_images/_imageMinecraft/4_.png
+
+Iz kategorije |Loops| izaberemo blok |start|. Izabrani blok ćemo koristiti kao "okidač" za resetiranje varijable **Brojač**.
+
+Iz kategorije |Variables| povucite blok |set| Brojač to ``0``:
+
+.. image:: ../_images/_imageMinecraft/54.png
+          :align: center
+
+A sada ćemo nadograditi program za sadnju stabala:
+
+.. image:: ../_images/_imageMinecraft/55.png
+          :align: center
+
+dodavanjem dijela koji će se registrirati kad se promijeni vrijednost varijable **Brojač**.
+
+Sada trebamo koristiti varijablu **Brojač**, čija je vrijednost postavljena na 0. Vrijednost ove varijable mijenjat će se (povećavati za jedan) svaki put kada lik postavi blok, tj. posadi stablo.
+
+Za to ćemo koristiti blok |change| iz kategorije ``Varijable``. Povući ćemo ovaj blok na dio koda koji se koristi za postavljanje (sadnju) stabala, kao i na blok koji ćemo koristiti za prikazivanje (recimo) koliko je stabala posađeno. 
+
+.. |change| image:: ../_images/_imageMinecraft/6_.png
+
+Izgled koda nakon promjena:
+
+.. image:: ../_images/_imageMinecraft/56.png
+          :align: center
+
+
+Za kraj, kako bismo vidjeli koliko je drveća zasađeno, uvodimo blok |chat| u koji ćemo povući blok |say|. U ovaj ćemo blok umetnuti |Broj|.
+
+.. |chat| image:: ../_images/_imageMinecraft/8_.png
+.. |say| image:: ../_images/_imageMinecraft/27.png
+            :width: 100px
+.. |Broj| image:: ../_images/_imageMinecraft/9_.png
+
+Izgled koda:
+
+.. image:: ../_images/_imageMinecraft/58.png
+          :align: center
+
+Izgled programa za brojanje stabala:
+
+.. image:: ../_images/_imageMinecraft/59.png
+          :align: center
+
+**Faza 3**
+
+Testiranje programa.
+Kliknite na gumb |Play|.
+
+.. |Play| image:: ../_images/_imageMinecraft/15.png
+          :width: 40px
+
+.. image:: ../_images/_imageMinecraft/57.png
+          :align: center
+
+Nakon što smo testirali program, možemo zaključiti da je učinio što smo htjeli. Broji koliko je drveća zasadio lik kretanjem po svijetu.
