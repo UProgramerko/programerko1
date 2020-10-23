@@ -207,7 +207,7 @@
   <div class="section" id="rad-s-blokovima-iz-kategorije-input">
 <h1>Rad s blokovima iz kategorije Input<a class="headerlink" href="#rad-s-blokovima-iz-kategorije-input" title="Permalink to this headline">¶</a></h1>
 <p>Računalo obrađuje podatke koje dobiva od ulaza (od korisnika (pritiskanje gumba, …) ili okoline (vrijednosti dobivene očitanjem senzora)). U MakeCode-u postoji kategorija blokova koji omogućuju rad ulaznih podataka, točnije kategorija bloka koji programu dopuštaju da “izvršava određene radnje” na temelju informacija koje dobiva od korisnika ili okoline.</p>
-<p>Kategorija <img alt="input" src="_images/s261.png" /> sadrži blokove (naredbe), koji prihvaćaju podatke, dobivene od korisnika (klikom na gumb) ili okoliša (čitanje senzora).</p>
+<p>Kategorija <img alt="input" src="_images/s261.png" /> sadrži blokove (naredbe), koji prihvaćaju podatke pružene od strane korisnika (klikom na gumb) ili okoliša (čitanje senzora).</p>
 <img alt="_images/p8.png" class="align-center" src="_images/p8.png" />
 <p>Ulazni podaci mogu se dobiti pritiskom na tipke <code class="docutils literal notranslate"><span class="pre">A</span></code>, <code class="docutils literal notranslate"><span class="pre">B</span></code> ili <code class="docutils literal notranslate"><span class="pre">A+B</span></code>, kao i čitanjem vrijednosti senzora za svjetlost, temperaturu, akcelerometar.</p>
 <p>Želimo napisati program koji prikazuje temperaturu (u Celzijusu) pritiskom na tipku <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
@@ -224,11 +224,11 @@
             </ul>
             </div>
             <p>Kao što smo vidjeli u primjerima u prvoj lekciji, pokretanje i izvršavanje programa ovisilo je o bloku, <img alt="onstart" src="_images/s20.png" /> ili <img alt="forever" src="_images/s1.png" />.</p>
-<p>Da biste omogućili unos podataka, odnosno, za pokretanje ili izvršavanje programa odaberemo blok koristimo pritisak na tipku <code class="docutils literal notranslate"><span class="pre">A</span></code>, iz kategorije <img alt="input" src="_images/s261.png" /> odaberemo blok: <img alt="onbutton" src="_images/p9.png" /> i iz padajuće liste odaberemo dugme A.</p>
+<p>Da biste omogućili unos podataka, odnosno, da biste uspjeli pokrenuti program pritiskom na tipku <code class="docutils literal notranslate"><span class="pre">A</span></code>, iz kategorije <img alt="input" src="_images/s261.png" /> odaberemo blok: <img alt="onbutton" src="_images/p9.png" /> i iz padajućeg izbornika odaberemo A.</p>
 <p>Blok <img alt="onbutton" src="_images/p9.png" /> pokreće program i svi blokovi unutar njega se izvršavaju.</p>
 <p>Povlačimo blok u radnu površinu <code class="docutils literal notranslate"><span class="pre">on</span> <span class="pre">button</span> <span class="pre">...</span> <span class="pre">pressed</span></code> a unutar njega povlačimo blok kojim želimo prikazati vrijednost temperature.</p>
 <p>Za prikazivanje temperature koristimo blok <img alt="shownumber" src="_images/15.png" /> iz kategorije <img alt="Basic" src="_images/s2.png" />.</p>
-<p>Nakon spajanja ovih blokova iz Input kategorije odabiremo blok <img alt="temperatura" src="_images/s55.png" /> koju povlačimo u naredbeno polje za prikaz broja navedeno za broj. Blok <img alt="temperatura" src="_images/s55.png" /> pohranjuje očitanu vrijednost senzora za temperaturu, prikazanu u Celzijusu.</p>
+<p>Nakon spajanja ovih blokova iz Input kategorije odabiremo blok <img alt="temperatura" src="_images/s55.png" /> koji povlačimo u naredbeno polje za upis naredbe za prikaz broja. Blok <img alt="temperatura" src="_images/s55.png" /> pohranjuje očitanu vrijednost senzora za temperaturu, prikazanu u Celzijusu.</p>
 <p>Završni izgled programa:</p>
 <img alt="_images/p10.png" class="align-center" src="_images/p10.png" />
 <p>Koristit ćemo simulator za testiranje programa. Jednim klikom na tipku <img alt="play" src="_images/p3.png" /> program se izvršava.</p>
